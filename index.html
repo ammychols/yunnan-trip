@@ -1,1 +1,932 @@
-placeholder_will_read_below
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>🏔️ Yunnan Trip · 24-29 Jul 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f0f4f8;
+    --surface: #ffffff;
+    --surface2: #f8fafc;
+    --border: #e2e8f0;
+    --primary: #0ea5e9;
+    --primary-light: #e0f2fe;
+    --primary-dark: #0369a1;
+    --orange: #f97316;
+    --orange-light: #fff7ed;
+    --green: #10b981;
+    --green-light: #ecfdf5;
+    --red: #ef4444;
+    --red-light: #fef2f2;
+    --yellow: #f59e0b;
+    --yellow-light: #fffbeb;
+    --purple: #8b5cf6;
+    --purple-light: #f5f3ff;
+    --text: #1e293b;
+    --text2: #64748b;
+    --text3: #94a3b8;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.06);
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.06), 0 2px 8px rgba(0,0,0,0.04);
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Kanit', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+
+  .header-banner {
+    background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 50%, #f97316 100%);
+    padding: 14px 16px 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .banner-icon { font-size: 28px; line-height: 1; }
+  .banner-text { flex: 1; }
+  .banner-text h1 { font-size: 16px; font-weight: 700; color: #fff; line-height: 1.2; }
+  .banner-text p { font-size: 11px; color: rgba(255,255,255,0.82); font-family: 'Space Mono', monospace; margin-top: 2px; }
+
+  .progress-pill {
+    background: rgba(255,255,255,0.22);
+    border: 1px solid rgba(255,255,255,0.5);
+    color: #fff;
+    font-size: 11px;
+    font-family: 'Space Mono', monospace;
+    padding: 4px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+    font-weight: 700;
+  }
+
+  .day-tabs {
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 0 8px;
+    background: #fff;
+  }
+  .day-tabs::-webkit-scrollbar { display: none; }
+
+  .day-tab {
+    flex-shrink: 0;
+    padding: 10px 16px 12px;
+    border: none;
+    background: transparent;
+    color: var(--text3);
+    font-family: 'Kanit', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .day-tab.active { color: var(--primary-dark); border-bottom-color: var(--primary); font-weight: 600; }
+  .day-tab .day-num { display: block; font-size: 18px; font-weight: 800; line-height: 1; margin-bottom: 2px; font-family: 'Space Mono', monospace; }
+  .day-tab .day-label { display: block; font-size: 10px; }
+  .day-tab.danger .day-num { color: var(--orange); }
+  .day-tab.active.danger { border-bottom-color: var(--orange); color: var(--orange); }
+  .day-tab.active .day-num { color: var(--primary); }
+  .day-tab.active.danger .day-num { color: var(--orange); }
+
+  .content { padding: 16px; position: relative; max-width: 600px; margin: 0 auto; }
+
+  .day-page { display: none; animation: fadeUp 0.3s ease; }
+  .day-page.active { display: block; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .day-hero {
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 16px;
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+  }
+
+  .day-hero::after {
+    content: var(--hero-emoji, '🗺️');
+    position: absolute;
+    right: -8px; bottom: -8px;
+    font-size: 80px;
+    opacity: 0.18;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  .day-hero-badge {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.2);
+    padding: 3px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+    letter-spacing: 0.06em;
+  }
+
+  .day-hero h2 { font-size: 20px; font-weight: 700; line-height: 1.3; margin-bottom: 10px; }
+
+  .day-hero-meta { display: flex; gap: 8px; flex-wrap: wrap; }
+
+  .meta-chip {
+    font-size: 11px;
+    color: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.18);
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    backdrop-filter: blur(4px);
+  }
+
+  .hero-blue { background: linear-gradient(135deg, #0ea5e9, #6366f1); }
+  .hero-orange { background: linear-gradient(135deg, #f97316, #ef4444); }
+  .hero-green { background: linear-gradient(135deg, #10b981, #0ea5e9); }
+  .hero-purple { background: linear-gradient(135deg, #8b5cf6, #ec4899); }
+
+  .alert {
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    line-height: 1.55;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .alert-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .alert-body { flex: 1; }
+  .alert-title { font-weight: 600; font-size: 13px; margin-bottom: 4px; }
+
+  .alert-red { background: var(--red-light); border-left: 4px solid var(--red); }
+  .alert-red .alert-title { color: var(--red); }
+  .alert-orange { background: var(--orange-light); border-left: 4px solid var(--orange); }
+  .alert-orange .alert-title { color: var(--orange); }
+  .alert-green { background: var(--green-light); border-left: 4px solid var(--green); }
+  .alert-green .alert-title { color: #065f46; }
+  .alert-blue { background: var(--primary-light); border-left: 4px solid var(--primary); }
+  .alert-blue .alert-title { color: var(--primary-dark); }
+  .alert-yellow { background: var(--yellow-light); border-left: 4px solid var(--yellow); }
+  .alert-yellow .alert-title { color: #92400e; }
+
+  .section-header {
+    font-size: 11px;
+    font-family: 'Space Mono', monospace;
+    color: var(--text3);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 20px 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-header::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+  .timeline { position: relative; }
+
+  .timeline-item { display: flex; gap: 12px; margin-bottom: 3px; position: relative; }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: 58px; top: 30px; bottom: -3px;
+    width: 2px;
+    background: var(--border);
+  }
+
+  .timeline-item:last-child::before { display: none; }
+
+  .timeline-time {
+    width: 50px; flex-shrink: 0;
+    font-family: 'Space Mono', monospace;
+    font-size: 10px; color: var(--text3);
+    text-align: right; padding-top: 10px;
+    line-height: 1.2; font-weight: 700;
+  }
+
+  .timeline-dot {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid var(--border);
+    flex-shrink: 0; margin-top: 9px;
+    position: relative; z-index: 1;
+    box-shadow: 0 0 0 2px #fff;
+  }
+
+  .timeline-dot.highlight { border-color: var(--primary); background: var(--primary); }
+  .timeline-dot.danger { border-color: var(--red); background: var(--red); }
+  .timeline-dot.success { border-color: var(--green); background: var(--green); }
+  .timeline-dot.warn { border-color: var(--orange); background: var(--orange); }
+
+  .timeline-body {
+    flex: 1;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 9px 13px; margin-bottom: 3px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .timeline-body.highlight { border-color: #bae6fd; background: #f0f9ff; }
+  .timeline-body.danger { border-color: #fecaca; background: #fff5f5; }
+  .timeline-body.success { border-color: #a7f3d0; background: #f0fdf4; }
+  .timeline-body.warn { border-color: #fed7aa; background: #fff7ed; }
+
+  .timeline-body p { font-size: 13px; line-height: 1.55; color: var(--text); }
+  .timeline-body .tl-note { font-size: 11px; color: var(--text2); margin-top: 4px; }
+
+  .checklist-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 12px 14px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); margin-bottom: 8px;
+    cursor: pointer; transition: all 0.18s;
+    user-select: none; -webkit-tap-highlight-color: transparent;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .checklist-item:active { transform: scale(0.98); }
+  .checklist-item.checked { background: var(--green-light); border-color: #a7f3d0; }
+  .checklist-item.checked .check-text { text-decoration: line-through; color: var(--text3); }
+
+  .check-box {
+    width: 22px; height: 22px; border-radius: 7px;
+    border: 2px solid var(--border); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.18s; margin-top: 1px;
+    font-size: 13px; color: transparent; background: var(--bg);
+  }
+
+  .checklist-item.checked .check-box { background: var(--green); border-color: var(--green); color: #fff; }
+  .check-text { font-size: 13px; line-height: 1.5; flex: 1; }
+  .check-sub { font-size: 11px; color: var(--text2); margin-top: 2px; }
+
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+
+  .info-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: 14px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .info-card .ic-label { font-size: 10px; color: var(--text3); font-family: 'Space Mono', monospace; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 5px; }
+  .info-card .ic-value { font-size: 14px; font-weight: 700; color: var(--text); line-height: 1.3; }
+  .info-card .ic-sub { font-size: 11px; color: var(--text2); margin-top: 3px; }
+
+  .transport-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px;
+    display: flex; gap: 14px; align-items: center;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .transport-icon { font-size: 30px; flex-shrink: 0; }
+  .transport-info { flex: 1; }
+  .transport-info .t-route { font-size: 14px; font-weight: 600; margin-bottom: 3px; color: var(--text); }
+  .transport-info .t-detail { font-size: 12px; color: var(--text2); line-height: 1.4; }
+
+  .transport-badge {
+    font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700;
+    color: var(--primary-dark); background: var(--primary-light);
+    border: 1.5px solid #bae6fd; padding: 5px 12px;
+    border-radius: 8px; text-align: center; flex-shrink: 0;
+  }
+
+  .rest-options { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+
+  .rest-option {
+    background: var(--surface); border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm); padding: 12px 8px;
+    text-align: center; box-shadow: var(--shadow-sm);
+  }
+
+  .rest-option.best { border-color: #6ee7b7; background: var(--green-light); }
+  .rest-option .ro-title { font-size: 12px; font-weight: 700; margin-bottom: 5px; color: #065f46; }
+  .rest-option .ro-sub { font-size: 10px; color: var(--text2); line-height: 1.5; }
+  .rest-option .ro-price { font-size: 12px; font-weight: 700; color: var(--orange); margin-top: 7px; font-family: 'Space Mono', monospace; }
+  .rest-option .ro-free { font-size: 12px; font-weight: 700; color: var(--green); margin-top: 7px; font-family: 'Space Mono', monospace; }
+
+  .restaurant {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 8px;
+    box-shadow: var(--shadow-sm); display: flex; gap: 12px; align-items: flex-start;
+  }
+
+  .restaurant-emoji { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
+  .restaurant-body { flex: 1; }
+  .restaurant .r-name { font-size: 14px; font-weight: 700; margin-bottom: 2px; color: var(--text); }
+  .restaurant .r-cn { font-size: 10px; color: var(--text3); font-family: 'Space Mono', monospace; margin-bottom: 4px; }
+  .restaurant .r-detail { font-size: 12px; color: var(--text2); line-height: 1.5; }
+  .restaurant .r-price {
+    display: inline-block; font-family: 'Space Mono', monospace;
+    font-size: 11px; color: var(--orange); background: var(--orange-light);
+    border: 1px solid #fed7aa; padding: 2px 9px;
+    border-radius: 5px; margin-top: 6px; font-weight: 700;
+  }
+
+  .altitude-section {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px; margin-bottom: 14px;
+    box-shadow: var(--shadow);
+  }
+
+  .alt-title { font-size: 12px; font-family: 'Space Mono', monospace; color: var(--text2); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 14px; font-weight: 700; }
+  .alt-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .alt-label { font-size: 12px; color: var(--text2); width: 72px; flex-shrink: 0; font-weight: 500; }
+  .alt-bar-wrap { flex: 1; height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+  .alt-bar { height: 100%; border-radius: 4px; transition: width 0.8s ease; }
+  .alt-value { font-family: 'Space Mono', monospace; font-size: 11px; width: 58px; text-align: right; flex-shrink: 0; font-weight: 700; }
+
+  .phrase-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: 11px 14px; margin-bottom: 7px;
+    display: flex; align-items: center; gap: 12px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .phrase-card .ph-en { font-size: 12px; color: var(--text2); flex: 1; }
+  .phrase-card .ph-cn { font-size: 20px; font-weight: 800; color: var(--primary-dark); }
+  .phrase-card .ph-py { font-size: 10px; color: var(--text3); font-family: 'Space Mono', monospace; margin-top: 2px; }
+
+  .overall-progress {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px; margin-bottom: 16px;
+    box-shadow: var(--shadow);
+  }
+
+  .prog-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+  .prog-header span:first-child { font-size: 14px; font-weight: 600; color: var(--text); }
+  .prog-header span:last-child { font-family: 'Space Mono', monospace; font-size: 14px; color: var(--green); font-weight: 700; }
+  .prog-bar-wrap { height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
+  .prog-bar { height: 100%; background: linear-gradient(90deg, var(--primary), var(--green)); border-radius: 4px; transition: width 0.4s ease; }
+
+  .gear-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-bottom: 16px; }
+
+  .gear-item {
+    background: var(--surface); border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm); padding: 10px 13px;
+    font-size: 13px; cursor: pointer;
+    display: flex; gap: 8px; align-items: center;
+    transition: all 0.18s; -webkit-tap-highlight-color: transparent;
+    box-shadow: var(--shadow-sm); color: var(--text);
+  }
+
+  .gear-item.checked { background: var(--green-light); border-color: #6ee7b7; }
+  .gear-item.checked span { text-decoration: line-through; color: var(--text3); }
+
+  .cable-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+
+  .cable-card {
+    background: var(--surface); border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm); padding: 12px 10px;
+    text-align: center; box-shadow: var(--shadow-sm);
+  }
+
+  .cable-card.recommended { border-color: #6ee7b7; background: var(--green-light); }
+  .cable-card .cc-name { font-size: 12px; font-weight: 700; margin-bottom: 4px; }
+  .cable-card .cc-alt { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--text2); margin-bottom: 7px; }
+  .cable-card .cc-tag { font-size: 11px; padding: 3px 8px; border-radius: 5px; display: inline-block; font-weight: 700; }
+  .cable-card .cc-pros { font-size: 10px; color: var(--text2); margin-top: 8px; line-height: 1.6; text-align: left; }
+
+  .recommended-badge {
+    font-size: 9px; background: var(--green); color: #fff;
+    font-weight: 700; padding: 2px 7px; border-radius: 4px;
+    display: inline-block; margin-bottom: 5px; letter-spacing: 0.04em;
+  }
+
+  .emergency-card {
+    background: #fff5f5; border: 1.5px solid #fecaca;
+    border-radius: var(--radius); padding: 16px; margin-bottom: 12px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .emergency-card .ec-title { font-size: 12px; color: var(--red); font-family: 'Space Mono', monospace; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; font-weight: 700; }
+
+  .emergency-num { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px solid #fee2e2; }
+  .emergency-num:last-child { border-bottom: none; }
+  .emergency-num .en-label { font-size: 13px; color: var(--text2); }
+  .emergency-num .en-num { font-family: 'Space Mono', monospace; font-size: 17px; color: var(--red); font-weight: 800; }
+
+  .budget-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 11px 15px; background: var(--surface);
+    border: 1px solid var(--border); border-radius: var(--radius-sm);
+    margin-bottom: 7px; font-size: 13px; box-shadow: var(--shadow-sm);
+  }
+
+  .budget-row .br-item { color: var(--text); flex: 1; }
+  .budget-row .br-cny { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--text2); width: 60px; text-align: right; }
+  .budget-row .br-thb { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--orange); width: 65px; text-align: right; font-weight: 700; }
+
+  .budget-total { background: linear-gradient(135deg, #fff7ed, #fef3c7); border: 2px solid var(--yellow); font-weight: 700; box-shadow: var(--shadow); }
+  .budget-total .br-item { color: #92400e; font-size: 14px; }
+  .budget-total .br-cny { color: #92400e; font-size: 13px; }
+  .budget-total .br-thb { color: var(--orange); font-size: 14px; }
+
+  .bottom-nav {
+    position: fixed; bottom: 0; left: 0; right: 0;
+    background: #ffffff; border-top: 1px solid var(--border);
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+    display: flex; padding: env(safe-area-inset-bottom, 0) 0 0; z-index: 100;
+  }
+
+  .bottom-nav button {
+    flex: 1; padding: 10px 4px 12px;
+    background: transparent; border: none; color: var(--text3);
+    font-family: 'Kanit', sans-serif; font-size: 10px;
+    cursor: pointer; display: flex; flex-direction: column;
+    align-items: center; gap: 3px; transition: color 0.18s;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .bottom-nav button.active { color: var(--primary); }
+  .bottom-nav button .bn-icon { font-size: 21px; line-height: 1; }
+  .bottom-nav button .bn-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--primary); display: none; margin-top: -2px; }
+  .bottom-nav button.active .bn-dot { display: block; }
+
+  .main-page { display: none; }
+  .main-page.active { display: block; }
+  .scroll-content { padding-bottom: calc(72px + env(safe-area-inset-bottom, 0)); }
+  .divider { height: 1px; background: var(--border); margin: 16px 0; }
+  .mt-8 { margin-top: 8px; }
+  .text-sm { font-size: 12px; color: var(--text2); line-height: 1.6; }
+  .text-center { text-align: center; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-banner">
+    <div class="banner-icon">🏔️</div>
+    <div class="banner-text">
+      <h1>Yunnan Trip 2026</h1>
+      <p>24–29 JUL · BKK → KMG → DIG → LJG</p>
+    </div>
+    <div class="progress-pill" id="progressPill">0 / 0</div>
+  </div>
+  <div class="day-tabs" id="dayTabs">
+    <button class="day-tab active" onclick="showDay(0)"><span class="day-num">D0</span><span class="day-label">24 Jul 🌙</span></button>
+    <button class="day-tab" onclick="showDay(1)"><span class="day-num">D1</span><span class="day-label">25 Jul 🚄</span></button>
+    <button class="day-tab danger" onclick="showDay(2)"><span class="day-num">D2</span><span class="day-label">26 Jul 🥾</span></button>
+    <button class="day-tab" onclick="showDay(3)"><span class="day-num">D3</span><span class="day-label">27 Jul 🏯</span></button>
+    <button class="day-tab danger" onclick="showDay(4)"><span class="day-num">D4</span><span class="day-label">28 Jul 🏔️</span></button>
+    <button class="day-tab" onclick="showDay(5)"><span class="day-num">D5</span><span class="day-label">29 Jul ✈️</span></button>
+  </div>
+</div>
+
+<div class="main-page active" id="page-itin">
+  <div class="content scroll-content">
+
+    <div class="day-page active" id="day-0">
+      <div class="day-hero hero-blue" style="--hero-emoji:'🌙'">
+        <div class="day-hero-badge">DAY 0 · Thu 24 Jul · Overnight</div>
+        <h2>ค้างสนามบิน KMG 🌙</h2>
+        <div class="day-hero-meta">
+          <div class="meta-chip">✈️ MU9614 20:50</div>
+          <div class="meta-chip">🛬 00:20 KMG</div>
+          <div class="meta-chip">🛏️ Rest Area B3</div>
+        </div>
+      </div>
+      <div class="alert alert-orange">
+        <div class="alert-icon">⏰</div>
+        <div class="alert-body"><div class="alert-title">ตื่นนอน 05:30 — ห้ามสาย!</div>ต้องออกจากสนามบินไปสถานีรถไฟ ก่อน 06:00 เพื่อทัน C118 (07:56)</div>
+      </div>
+      <p class="section-header">Timeline วันนี้</p>
+      <div class="timeline">
+        <div class="timeline-item"><div class="timeline-time">17:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>เช็คอิน MU9614 ที่สุวรรณภูมิ T1</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">20:50</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>✈️ เครื่องออก BKK → KMG (China Eastern)</p><p class="tl-note">นอนบนเครื่องให้ได้มากที่สุด</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">00:20</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🛬 ถึง Kunming International Airport</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">00:20–01:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>ตม. + รับกระเป๋า + ผ่าน customs</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">01:30</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>🛏️ ไป B3 Overnight Rest Area (หรือ B1 สำรอง)</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">01:45–05:30</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>💤 นอน ~4 ชม. ตั้งปลุก 3 ตัว!</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">05:30</div><div class="timeline-dot warn"></div><div class="timeline-body warn"><p>⏰ ตื่น อาบน้ำ กินข้าวเช้าที่ B1 Food Court</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">06:00</div><div class="timeline-dot danger"></div><div class="timeline-body danger"><p>🚕 Didi/Taxi ออกจากสนามบิน → Kunming Railway Station<br><span class="tl-note">~50 นาที · ~120 CNY · ออกจาก B3 Area H</span></p></div></div>
+      </div>
+      <p class="section-header">ที่นอนในสนามบิน KMG</p>
+      <div class="rest-options">
+        <div class="rest-option best"><div class="ro-title">🟢 B3 Level</div><div class="ro-sub">Overnight Rest Area มีเตียงจริง แยกชาย/หญิง</div><div class="ro-free">ฟรี ✓</div></div>
+        <div class="rest-option"><div class="ro-title" style="color:#0369a1">🔵 B1 Level</div><div class="ro-sub">Transit Rest Area เก้าอี้นอน + ผ้าห่ม</div><div class="ro-free">ฟรี ✓</div></div>
+        <div class="rest-option"><div class="ro-title" style="color:#d97706">🟡 4F NAPHUBS</div><div class="ro-sub">Sleep Pod ส่วนตัว AC + TV + charger</div><div class="ro-price">~60 ¥/ชม.</div></div>
+      </div>
+      <p class="section-header">Pack ก่อนนอน</p>
+      <div class="checklist-item" onclick="toggleCheck(this)" data-id="d0-1"><div class="check-box">✓</div><div class="check-text">Eye mask + earplugs + neck pillow<div class="check-sub">สำคัญมาก — สนามบินเสียงดัง</div></div></div>
+      <div class="checklist-item" onclick="toggleCheck(this)" data-id="d0-2"><div class="check-box">✓</div><div class="check-text">Anti-theft pouch ใส่พาสปอร์ต + กระเป๋าสตางค์<div class="check-sub">สวมใต้เสื้อก่อนนอน</div></div></div>
+      <div class="checklist-item" onclick="toggleCheck(this)" data-id="d0-3"><div class="check-box">✓</div><div class="check-text">ตั้งปลุก 3 ตัว สำหรับ 05:30<div class="check-sub">มือถือ + smartwatch + backup alarm</div></div></div>
+      <div class="checklist-item" onclick="toggleCheck(this)" data-id="d0-4"><div class="check-box">✓</div><div class="check-text">กิน Rhodiola (红景天) 2 เม็ดก่อนนอน<div class="check-sub">เริ่ม altitude prep คืนนี้เลย</div></div></div>
+    </div>
+
+    <div class="day-page" id="day-1">
+      <div class="day-hero hero-blue" style="--hero-emoji:'🚄'">
+        <div class="day-hero-badge">DAY 1 · Fri 25 Jul · Travel Day</div>
+        <h2>KMG → Shangri-La 🚄</h2>
+        <div class="day-hero-meta">
+          <div class="meta-chip">🚄 C118 07:56</div>
+          <div class="meta-chip">🏔️ ถึง 12:44</div>
+          <div class="meta-chip">📍 3,200 ม.</div>
+        </div>
+      </div>
+      <div class="alert alert-red"><div class="alert-icon">⚠️</div><div class="alert-body"><div class="alert-title">Timing แน่นมาก — ทำตามนาทีต่อนาที</div>ออกสนามบิน 06:00 → สถานี 06:50 → รับตั๋ว+security 06:50–07:30 → ขึ้นรถ 07:56</div></div>
+      <p class="section-header">การเดินทาง</p>
+      <div class="transport-card"><div class="transport-icon">🚕</div><div class="transport-info"><div class="t-route">KMG Airport → Kunming Station (昆明站)</div><div class="t-detail">Didi/Taxi · B3 Area H · ~50 นาที<br>⚠️ ไม่ใช่ Kunming South!</div></div><div class="transport-badge">~120¥</div></div>
+      <div class="transport-card"><div class="transport-icon">🚄</div><div class="transport-info"><div class="t-route">Kunming → Shangri-La (迪庆)</div><div class="t-detail">C118 · 07:56 → 12:44 · 4h 48min<br>2nd class · ต้องจองล่วงหน้า!</div></div><div class="transport-badge">245¥</div></div>
+      <p class="section-header">Timeline วันนี้</p>
+      <div class="timeline">
+        <div class="timeline-item"><div class="timeline-time">05:30</div><div class="timeline-dot warn"></div><div class="timeline-body warn"><p>⏰ ตื่น ล้างหน้า แปรงฟัน</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">05:45</div><div class="timeline-dot"></div><div class="timeline-body"><p>🍳 กินข้าวเช้าที่ B1 Food Court</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">06:00</div><div class="timeline-dot danger"></div><div class="timeline-body danger"><p>🚕 Didi ออก → Kunming Railway Station</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">06:50</div><div class="timeline-dot"></div><div class="timeline-body"><p>ถึงสถานี → รับตั๋วจากเครื่อง (ใช้พาสปอร์ต)</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">06:50–07:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>Security screening → หาชานชาลา</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">07:56</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🚄 รถไฟ C118 ออกจาก Kunming<br><span class="tl-note">วิวภูเขาสวยมาก — นอนต่อได้เลยถ้าง่วง</span></p></div></div>
+        <div class="timeline-item"><div class="timeline-time">12:44</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🏔️ ถึง Shangri-La Railway Station</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">12:50</div><div class="timeline-dot"></div><div class="timeline-body"><p>🚕 Didi → Dukezong Old Town (~15 นาที, 30¥)</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">13:15</div><div class="timeline-dot"></div><div class="timeline-body"><p>🍜 กินข้าวเบาๆ (ห้ามกินหนัก!)</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">14:30</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>🏨 Check-in: Designer Hotel Silent Lost Horizon</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">15:00–16:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>💤 นอนพัก ดื่มน้ำเยอะๆ ร่างกายปรับ altitude</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">16:00–18:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🚶 เดินเบาๆ Dukezong Old Town + Giant Prayer Wheel<br><span class="tl-note">อย่าเดินเยอะ อย่าขึ้นบันไดเร็ว!</span></p></div></div>
+        <div class="timeline-item"><div class="timeline-time">18:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>🍽️ อาหารเย็นเบาๆ</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">20:30</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>💊 กิน Rhodiola + ดื่มน้ำ 1L → เข้านอน</p></div></div>
+      </div>
+      <div class="alert alert-red"><div class="alert-icon">🚫</div><div class="alert-body"><div class="alert-title">ห้ามวันนี้โดยเด็ดขาด</div>❌ ดื่มแอลกอฮอล์ · ❌ อาบน้ำร้อนนาน · ❌ วิ่ง/ออกแรงเยอะ · ❌ กินอิ่มมาก<br>✅ ดื่มน้ำ 3–4L · ✅ นอนหมอน 2 ใบ · ✅ กิน paracetamol ถ้าปวดหัว</div></div>
+      <p class="section-header">🍽️ ร้านอาหารแนะนำ Dukezong</p>
+      <div class="restaurant"><div class="restaurant-emoji">🥘</div><div class="restaurant-body"><div class="r-name">Cangshu Tibetan Kitchen</div><div class="r-cn">藏式餐厅</div><div class="r-detail">Yak meat hotpot · tsampa · butter tea · ใกล้ Moonlight Square</div><div class="r-price">¥80–120 pp</div></div></div>
+      <div class="restaurant"><div class="restaurant-emoji">🥟</div><div class="restaurant-body"><div class="r-name">Lhasa Beer Restaurant</div><div class="r-cn">拉萨啤酒</div><div class="r-detail">Momo (dumplings) · yak yogurt · ใน Dukezong (งดเบียร์คืนนี้!)</div><div class="r-price">¥60–90 pp</div></div></div>
+      <div class="restaurant"><div class="restaurant-emoji">🍝</div><div class="restaurant-body"><div class="r-name">Compass Restaurant</div><div class="r-detail">Western-Tibetan fusion · เมนูภาษาอังกฤษ · ดีสำหรับท้องที่ไม่ค่อยดี</div><div class="r-price">¥80–150 pp</div></div></div>
+    </div>
+
+    <div class="day-page" id="day-2">
+      <div class="day-hero hero-orange" style="--hero-emoji:'🥾'">
+        <div class="day-hero-badge">DAY 2 · Sat 26 Jul · ⚠️ HIGH ALTITUDE</div>
+        <h2>🥾 Abujicuo Lake Hiking</h2>
+        <div class="day-hero-meta">
+          <div class="meta-chip">📍 Trailhead 3,600 ม.</div>
+          <div class="meta-chip">🏔️ Lake 4,220 ม.</div>
+          <div class="meta-chip">🥾 9 km return</div>
+        </div>
+      </div>
+      <div class="alert alert-red"><div class="alert-icon">🩺</div><div class="alert-body"><div class="alert-title">เช็คตัวเองก่อน 06:00 — Cancel ถ้ามีอาการเหล่านี้</div>❌ ปวดหัวรุนแรงกินยาแล้วไม่หาย · ❌ อาเจียน · ❌ หายใจลำบากตอนนั่งเฉยๆ · ❌ เดินเซ</div></div>
+      <p class="section-header">Timeline วันนี้</p>
+      <div class="timeline">
+        <div class="timeline-item"><div class="timeline-time">06:00</div><div class="timeline-dot warn"></div><div class="timeline-body warn"><p>🩺 เช็คอาการตัวเอง · ดื่มน้ำ 500ml ทันที</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">06:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>🍳 กินข้าวเบาๆ — โจ๊ก + ไข่ต้ม</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">07:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>📦 เช็ค gear ทั้งหมด (ดูลิสต์ด้านล่าง)</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">07:30</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🚐 ทัวร์มารับที่โรงแรม</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">07:30–09:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🚐 ขับรถ 1.5 ชม. → Niguge trailhead (3,600 ม.)</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">09:00</div><div class="timeline-dot warn"></div><div class="timeline-body warn"><p>🥾 เริ่มเดินขึ้น — Rule: "30 ก้าว → หยุดหายใจ 30 วิ"</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">11:30–12:00</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🌊 ถึง Abujicuo Lake (4,220 ม.)! 🎉</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">13:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>⬇️ เริ่มเดินลง (~1.5 ชม.)</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">15:00–16:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>🚐 ขับกลับ Shangri-La</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">17:00</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>🏨 ถึงโรงแรม อาบน้ำอุ่น นอนพัก</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">20:30</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>💤 เข้านอนเร็ว</p></div></div>
+      </div>
+      <p class="section-header">🎒 Gear Checklist</p>
+      <div class="gear-grid">
+        <div class="gear-item" onclick="toggleGear(this)"><span>💧 น้ำ 2 ลิตร</span></div>
+        <div class="gear-item" onclick="toggleGear(this)"><span>🥾 รองเท้า hiking</span></div>
+        <div class="gear-item" onclick="toggleGear(this)"><span>🧥 Fleece layer</span></div>
+        <div class="gear-item" onclick="toggleGear(this)"><span>🌧️ Rain shell</span></div>
+        <div class="gear-item" onclick="toggleGear(this)"><span>☀️ ครีมกันแดด SPF50</span></div>
+        <div class="gear-item" onclick="toggleGear(this)"><span>🕶️ แว่นกันแดด</span></div>
+        <div class="gear-item" onclick="toggleGear(this)"><span>🧢 หมวก</span></div>
+        <div class="gear-item" onclick="toggleGear(this)"><span>🍫 Snacks/ช็อกโกแลต</span></div>
+        <div class="gear-item" onclick="toggleGear(this)"><span>💊 Paracetamol</span></div>
+        <div class="gear-item" onclick="toggleGear(this)"><span>💊 Diamox/Rhodiola</span></div>
+        <div class="gear-item" onclick="toggleGear(this)"><span>🔋 Power bank</span></div>
+        <div class="gear-item" onclick="toggleGear(this)"><span>🧤 ถุงมือบาง</span></div>
+        <div class="gear-item" onclick="toggleGear(this)"><span>💴 Cash 200¥</span></div>
+        <div class="gear-item" onclick="toggleGear(this)"><span>📦 Daypack 20–30L</span></div>
+      </div>
+      <div class="divider"></div>
+      <p class="section-header">🔄 Plan B (ถ้าร่างกายไม่พร้อม)</p>
+      <div class="alert alert-blue"><div class="alert-icon">💡</div><div class="alert-body"><div class="alert-title">ทางเลือกในกรณียกเลิก Abujicuo</div>🏛️ <strong>Songzanlin Monastery</strong> — วัดทิเบตใหญ่ที่สุด · 115¥<br>🚲 <strong>Napa Lake</strong> — ปั่นจักรยานชิลล์ๆ · 60¥<br>🌲 <strong>Pudacuo National Park</strong> — boardwalk สบาย · 100¥</div></div>
+    </div>
+
+    <div class="day-page" id="day-3">
+      <div class="day-hero hero-purple" style="--hero-emoji:'🏯'">
+        <div class="day-hero-badge">DAY 3 · Sun 27 Jul · Travel + Explore</div>
+        <h2>Shangri-La → Lijiang 🏯</h2>
+        <div class="day-hero-meta">
+          <div class="meta-chip">🚄 C120 10:30</div>
+          <div class="meta-chip">🏯 Old Town เย็น</div>
+          <div class="meta-chip">📍 2,400 ม.</div>
+        </div>
+      </div>
+      <div class="alert alert-green"><div class="alert-icon">💪</div><div class="alert-body"><div class="alert-title">วันพักฟื้น — ไม่ต้องรีบ</div>ร่างกายกำลังฟื้นตัวจาก Abujicuo ตื่นช้าได้ มีเวลา 3 ชม. ก่อนรถไฟ</div></div>
+      <p class="section-header">การเดินทาง</p>
+      <div class="transport-card"><div class="transport-icon">🚄</div><div class="transport-info"><div class="t-route">Shangri-La → Lijiang</div><div class="t-detail">C120 · 10:30 → 11:50 · 1h 20min</div></div><div class="transport-badge">63¥</div></div>
+      <p class="section-header">Timeline วันนี้</p>
+      <div class="timeline">
+        <div class="timeline-item"><div class="timeline-time">07:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>😴 ตื่นสบายๆ กินข้าวเช้าดีๆ</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">08:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>📦 Pack + Check-out</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">09:00–09:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>🚶 เดินเล่น Dukezong เช้า<br><span class="tl-note">ซื้อของฝาก butter coffee / thangka</span></p></div></div>
+        <div class="timeline-item"><div class="timeline-time">09:45</div><div class="timeline-dot warn"></div><div class="timeline-body warn"><p>🚕 Didi ไปสถานีรถไฟ</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">10:30</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🚄 รถไฟ C120 ออก → Lijiang</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">11:50</div><div class="timeline-dot"></div><div class="timeline-body"><p>🛬 ถึง Lijiang Railway Station</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">12:30</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>🏨 Check-in: Feng Qingcheng Inn</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">15:00–18:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🏯 เดิน Lijiang Old Town · Sifang St · Mu Mansion · Wangu Tower</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">20:00–22:00</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🏮 Old Town ยามค่ำคืน — สวยที่สุดของทริป!</p></div></div>
+      </div>
+      <p class="section-header">🏯 จุดน่าไปใน Lijiang</p>
+      <div class="info-grid">
+        <div class="info-card"><div class="ic-label">四方街</div><div class="ic-value">Sifang Square</div><div class="ic-sub">ใจกลางเมืองเก่า · ฟรี</div></div>
+        <div class="info-card"><div class="ic-label">木府</div><div class="ic-value">Mu Mansion</div><div class="ic-sub">วังเจ้าเมือง Naxi · 60¥</div></div>
+        <div class="info-card"><div class="ic-label">万古楼</div><div class="ic-value">Wangu Tower</div><div class="ic-sub">วิวทั้งเมืองเก่า · 50¥</div></div>
+        <div class="info-card"><div class="ic-label">黑龙潭</div><div class="ic-value">Black Dragon Pool</div><div class="ic-sub">วิว Jade Dragon Mt · ฟรี</div></div>
+      </div>
+      <div class="alert alert-yellow"><div class="alert-icon">🎫</div><div class="alert-body"><div class="alert-title">Lijiang Preservation Fee: 50¥</div>เก็บใบเสร็จไว้ — แสดงที่ทางเข้าสถานที่ต่างๆ ใน Old Town</div></div>
+      <p class="section-header">🍽️ ร้านอาหารแนะนำ Lijiang</p>
+      <div class="restaurant"><div class="restaurant-emoji">🦆</div><div class="restaurant-body"><div class="r-name">Lijiang Liangcaifang</div><div class="r-cn">丽江凉菜坊</div><div class="r-detail">เป็ดย่าง · ฟักทองผัดไข่เค็ม · ไม่เผ็ดมาก</div><div class="r-price">¥80–120 pp</div></div></div>
+      <div class="restaurant"><div class="restaurant-emoji">🍲</div><div class="restaurant-body"><div class="r-name">Naxi Family Banquet</div><div class="r-cn">纳西家宴</div><div class="r-detail">Lijiang rib hotpot (腊排骨火锅) — signature ของลี่เจียง</div><div class="r-price">¥120–180 pp</div></div></div>
+      <div class="restaurant"><div class="restaurant-emoji">🍦</div><div class="restaurant-body"><div class="r-name">A-Ma-Yi Yak Yogurt</div><div class="r-cn">阿妈意</div><div class="r-detail">โยเกิร์ตจามรี + แยมกุหลาบ — ต้องลอง!</div><div class="r-price">¥20–30</div></div></div>
+    </div>
+
+    <div class="day-page" id="day-4">
+      <div class="day-hero hero-orange" style="--hero-emoji:'🏔️'">
+        <div class="day-hero-badge">DAY 4 · Mon 28 Jul · ⚠️ HIGH ALTITUDE</div>
+        <h2>🏔️ ภูเขาหิมะมังกรหยก</h2>
+        <div class="day-hero-meta">
+          <div class="meta-chip">📍 สูงสุด 4,506 ม.</div>
+          <div class="meta-chip">💧 Blue Moon Valley</div>
+          <div class="meta-chip">🎫 จองด่วน!</div>
+        </div>
+      </div>
+      <div class="alert alert-orange"><div class="alert-icon">🎫</div><div class="alert-body"><div class="alert-title">จองตั๋วคืน Day 3 — โควต้าจำกัด!</div>Trip.com หรือ Klook — ค้นหา "Jade Dragon Snow Mountain"</div></div>
+      <p class="section-header">🚡 เลือก Cable Car ไหน?</p>
+      <div class="cable-grid">
+        <div class="cable-card"><div class="cc-name" style="color:var(--primary-dark)">Big Cable Car</div><div class="cc-alt">4,506 ม.</div><div class="cc-tag" style="background:var(--primary-light);color:var(--primary-dark)">380¥</div><div class="cc-pros">✓ ธารน้ำแข็งจริง<br>✗ มักปิดเพราะเมฆ<br>✗ ต้องใช้ oxygen (200¥)</div></div>
+        <div class="cable-card recommended"><div class="recommended-badge">⭐ แนะนำ Jul</div><div class="cc-name" style="color:#065f46">Yak Meadow</div><div class="cc-alt">3,200 ม.</div><div class="cc-tag" style="background:var(--green-light);color:#065f46">230¥</div><div class="cc-pros">✓ ทุ่งดอกไม้ Jul<br>✓ จามรีเดินเล่น<br>✓ ไม่มีเมฆบัง<br>✓ ปลอดภัยกว่า</div></div>
+        <div class="cable-card"><div class="cc-name" style="color:#92400e">Spruce Meadow</div><div class="cc-alt">3,205 ม.</div><div class="cc-tag" style="background:var(--yellow-light);color:#92400e">220¥</div><div class="cc-pros">✓ เดินป่าสน<br>✓ สถานที่ศักดิ์สิทธิ์<br>✗ วิวไม่ wow</div></div>
+      </div>
+      <p class="section-header">Timeline วันนี้</p>
+      <div class="timeline">
+        <div class="timeline-item"><div class="timeline-time">06:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>📱 เช็คสภาพอากาศ → ตัดสินใจ cable car</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">07:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🍳 กินข้าวเช้า</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">08:00</div><div class="timeline-dot warn"></div><div class="timeline-body warn"><p>🚕 Didi/Charter → Jade Dragon (~50 นาที, ~120¥)</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">09:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🎫 ซื้อตั๋ว + Preservation Fee 50¥</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">09:30–13:00</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🚡 ขึ้น cable car · เดินชมทิวทัศน์<br><span class="tl-note">เดินช้าๆ ที่สูงนี้ อย่าวิ่งเด็ดขาด</span></p></div></div>
+        <div class="timeline-item"><div class="timeline-time">14:00–16:00</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>💧 Blue Moon Valley (蓝月谷) — น้ำสีฟ้าเขียวสวยมาก</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">16:00–17:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🎭 Optional: Impression Lijiang Show — 250¥</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">17:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>🚕 กลับ Lijiang Old Town</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">22:00</div><div class="timeline-dot danger"></div><div class="timeline-body danger"><p>📦 Pack กระเป๋าทุกอย่าง — พรุ่งนี้ตื่น 05:30!</p></div></div>
+      </div>
+    </div>
+
+    <div class="day-page" id="day-5">
+      <div class="day-hero hero-green" style="--hero-emoji:'✈️'">
+        <div class="day-hero-badge">DAY 5 · Tue 29 Jul · Homebound</div>
+        <h2>Lijiang → Kunming → BKK ✈️</h2>
+        <div class="day-hero-meta">
+          <div class="meta-chip">🚄 D8748 07:31</div>
+          <div class="meta-chip">✈️ MU9613 18:00</div>
+          <div class="meta-chip">🏠 BKK 20:10</div>
+        </div>
+      </div>
+      <div class="alert alert-green"><div class="alert-icon">✅</div><div class="alert-body"><div class="alert-title">Buffer ปลอดภัยมาก</div>รถไฟถึง Kunming 10:30 · เครื่องบินออก 18:00 = มีเวลา ~5.5 ชม.</div></div>
+      <p class="section-header">การเดินทาง</p>
+      <div class="transport-card"><div class="transport-icon">🚄</div><div class="transport-info"><div class="t-route">Lijiang → Kunming</div><div class="t-detail">D8748 · 07:31 → 10:30 · 2h 59min</div></div><div class="transport-badge">220¥</div></div>
+      <div class="transport-card"><div class="transport-icon">✈️</div><div class="transport-info"><div class="t-route">KMG → BKK</div><div class="t-detail">MU9613 · 18:00 → 20:10 · China Eastern</div></div><div class="transport-badge">pre-booked</div></div>
+      <p class="section-header">Timeline วันนี้</p>
+      <div class="timeline">
+        <div class="timeline-item"><div class="timeline-time">05:30</div><div class="timeline-dot warn"></div><div class="timeline-body warn"><p>⏰ ตื่น · เช็คว่าไม่ลืมของ</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">06:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🍳 กินข้าวเช้าเร็ว + Check-out</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">06:30</div><div class="timeline-dot warn"></div><div class="timeline-body warn"><p>🚕 Didi → Lijiang Railway Station</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">07:31</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🚄 รถไฟ D8748 ออกจาก Lijiang</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">10:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>🛬 ถึง Kunming Railway Station</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">11:15–12:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>🌿 เดินเล่น Green Lake Park + Yuantong Temple (ฟรีเข้า)</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">12:30</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🍜 过桥米线 Crossing-the-Bridge Noodles ¥30–60</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">14:50</div><div class="timeline-dot"></div><div class="timeline-body"><p>🛫 ถึง KMG · Check-in MU9613</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">18:00</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>✈️ MU9613 ออก → BKK</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">20:10</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>🏠 ถึง BKK! 一路顺风! 🎉</p></div></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="main-page" id="page-check">
+  <div class="content scroll-content">
+    <div class="overall-progress">
+      <div class="prog-header"><span>ความคืบหน้า Checklist</span><span id="progressText">0%</span></div>
+      <div class="prog-bar-wrap"><div class="prog-bar" id="progressBar" style="width:0%"></div></div>
+    </div>
+    <p class="section-header">📋 ก่อนเดินทาง</p>
+    <div class="checklist-item" onclick="toggleCheck(this)" data-id="pre-1"><div class="check-box">✓</div><div class="check-text">ตรวจพาสปอร์ต (ต้องหมดอายุหลัง 29 ม.ค. 2027)<div class="check-sub">Valid 6 months+ after return date</div></div></div>
+    <div class="checklist-item" onclick="toggleCheck(this)" data-id="pre-2"><div class="check-box">✓</div><div class="check-text">ซื้อประกันการเดินทาง (ครอบคลุม hiking + altitude)<div class="check-sub">World Nomads / AXA / Allianz</div></div></div>
+    <div class="checklist-item" onclick="toggleCheck(this)" data-id="pre-3"><div class="check-box">✓</div><div class="check-text">จองตั๋วรถไฟ C118 (25 Jul 07:56 KMG→DIG)<div class="check-sub">Trip.com / Klook · 245¥ · เปิด 10 Jul</div></div></div>
+    <div class="checklist-item" onclick="toggleCheck(this)" data-id="pre-4"><div class="check-box">✓</div><div class="check-text">จองตั๋วรถไฟ C120 (27 Jul 10:30 DIG→LJG)<div class="check-sub">Trip.com / Klook · 63¥ · เปิด 12 Jul</div></div></div>
+    <div class="checklist-item" onclick="toggleCheck(this)" data-id="pre-5"><div class="check-box">✓</div><div class="check-text">จองตั๋วรถไฟ D8748 (29 Jul 07:31 LJG→KMG)<div class="check-sub">Trip.com / Klook · 220¥ · เปิด 14 Jul</div></div></div>
+    <div class="checklist-item" onclick="toggleCheck(this)" data-id="pre-6"><div class="check-box">✓</div><div class="check-text">จองตั๋ว Jade Dragon Snow Mountain (28 Jul)<div class="check-sub">Trip.com หรือ Klook · โควต้าจำกัด!</div></div></div>
+    <div class="checklist-item" onclick="toggleCheck(this)" data-id="pre-7"><div class="check-box">✓</div><div class="check-text">ติดต่อ Designer Hotel จอง Abujicuo Tour (26 Jul)<div class="check-sub">~180¥/คน · Group tour หรือ Charter 400-500¥</div></div></div>
+    <div class="checklist-item" onclick="toggleCheck(this)" data-id="pre-8"><div class="check-box">✓</div><div class="check-text">ซื้อ Rhodiola (红景天) + ปรึกษาแพทย์เรื่อง Diamox<div class="check-sub">เริ่มกิน Rhodiola 5 วันก่อนเดินทาง (19 Jul)</div></div></div>
+    <p class="section-header">📱 Apps ที่ต้องติดตั้ง</p>
+    <div class="checklist-item" onclick="toggleCheck(this)" data-id="app-1"><div class="check-box">✓</div><div class="check-text">WeChat + ผูกบัตรเครดิต<div class="check-sub">MUST — ใช้จ่ายทุกอย่างในจีน</div></div></div>
+    <div class="checklist-item" onclick="toggleCheck(this)" data-id="app-2"><div class="check-box">✓</div><div class="check-text">Alipay + ผูกบัตรเครดิต<div class="check-sub">MUST — Backup payment</div></div></div>
+    <div class="checklist-item" onclick="toggleCheck(this)" data-id="app-3"><div class="check-box">✓</div><div class="check-text">Didi (ภาษาอังกฤษ)<div class="check-sub">MUST — Taxi ทุกเส้นทาง</div></div></div>
+    <div class="checklist-item" onclick="toggleCheck(this)" data-id="app-4"><div class="check-box">✓</div><div class="check-text">VPN (LetsVPN / Astrill) ติดตั้งก่อนออกไทย!<div class="check-sub">MUST — เว็บ VPN บล็อกในจีน</div></div></div>
+    <div class="checklist-item" onclick="toggleCheck(this)" data-id="app-5"><div class="check-box">✓</div><div class="check-text">Maps.me + Download แผนที่ offline Yunnan<div class="check-sub">สำคัญสำหรับ Abujicuo trail</div></div></div>
+    <div class="checklist-item" onclick="toggleCheck(this)" data-id="app-6"><div class="check-box">✓</div><div class="check-text">Google Translate + Download ภาษาจีน offline<div class="check-sub">Camera mode อ่านป้ายได้ทันที</div></div></div>
+    <div class="checklist-item" onclick="toggleCheck(this)" data-id="app-7"><div class="check-box">✓</div><div class="check-text">Trip.com / Ctrip (携程)<div class="check-sub">จองตั๋วรถไฟ + สถานที่</div></div></div>
+    <p class="section-header">🎒 สิ่งของสำคัญ</p>
+    <div class="checklist-item" onclick="toggleCheck(this)" data-id="pack-1"><div class="check-box">✓</div><div class="check-text">แลกเงิน ~1,500 CNY ที่ไทยก่อนบิน<div class="check-sub">เตรียมแบงก์เล็ก — ร้านเล็กไม่รับ QR</div></div></div>
+    <div class="checklist-item" onclick="toggleCheck(this)" data-id="pack-2"><div class="check-box">✓</div><div class="check-text">Eye mask + Earplugs + Neck pillow<div class="check-sub">สำหรับคืนค้างสนามบิน KMG</div></div></div>
+    <div class="checklist-item" onclick="toggleCheck(this)" data-id="pack-3"><div class="check-box">✓</div><div class="check-text">รองเท้า hiking กันน้ำ (ที่สวมใส่แล้ว ไม่ใช่ใหม่!)<div class="check-sub">Break in ก่อน — ตุ่มพองบนเขาแย่มาก</div></div></div>
+    <div class="checklist-item" onclick="toggleCheck(this)" data-id="pack-4"><div class="check-box">✓</div><div class="check-text">เสื้อ 3 layer: base + fleece + waterproof shell<div class="check-sub">Shangri-La 8–20°C · บนทะเลสาบ ~10°C</div></div></div>
+    <div class="checklist-item" onclick="toggleCheck(this)" data-id="pack-5"><div class="check-box">✓</div><div class="check-text">Power bank ≥10,000 mAh (ต่ำกว่า 100Wh)<div class="check-sub">ความเย็นทำให้แบตหมดเร็วมาก</div></div></div>
+    <div class="checklist-item" onclick="toggleCheck(this)" data-id="pack-6"><div class="check-box">✓</div><div class="check-text">China eSIM หรือ SIM Card จีน<div class="check-sub">China Unicom/Mobile</div></div></div>
+    <div class="checklist-item" onclick="toggleCheck(this)" data-id="pack-7"><div class="check-box">✓</div><div class="check-text">ครีมกันแดด SPF 50+ + หมวก + แว่นกันแดด<div class="check-sub">UV ที่ 4,000 ม. แรงกว่าระดับน้ำทะเลมาก</div></div></div>
+    <div class="checklist-item" onclick="toggleCheck(this)" data-id="pack-8"><div class="check-box">✓</div><div class="check-text">ยา: Paracetamol + Imodium + ORS + พลาสเตอร์<div class="check-sub">บวก Rhodiola + Diamox</div></div></div>
+    <div class="checklist-item" onclick="toggleCheck(this)" data-id="pack-9"><div class="check-box">✓</div><div class="check-text">Print: ตั๋วเครื่องบิน + ยืนยันโรงแรมทั้งหมด<div class="check-sub">Designer Hotel + Feng Qingcheng Inn</div></div></div>
+  </div>
+</div>
+
+<div class="main-page" id="page-alt">
+  <div class="content scroll-content">
+    <div class="altitude-section">
+      <div class="alt-title">📊 Altitude Profile — แต่ละจุดในทริป</div>
+      <div class="alt-row"><div class="alt-label">Bangkok</div><div class="alt-bar-wrap"><div class="alt-bar" style="width:4%;background:#0ea5e9"></div></div><div class="alt-value" style="color:#0ea5e9">20 ม.</div></div>
+      <div class="alt-row"><div class="alt-label">KMG</div><div class="alt-bar-wrap"><div class="alt-bar" style="width:42%;background:#6366f1"></div></div><div class="alt-value" style="color:#6366f1">1,900 ม.</div></div>
+      <div class="alt-row"><div class="alt-label">Lijiang</div><div class="alt-bar-wrap"><div class="alt-bar" style="width:53%;background:#10b981"></div></div><div class="alt-value" style="color:#10b981">2,400 ม.</div></div>
+      <div class="alt-row"><div class="alt-label">Shangri-La</div><div class="alt-bar-wrap"><div class="alt-bar" style="width:71%;background:#f59e0b"></div></div><div class="alt-value" style="color:#d97706">3,200 ม.</div></div>
+      <div class="alt-row"><div class="alt-label">Abujicuo</div><div class="alt-bar-wrap"><div class="alt-bar" style="width:93%;background:#f97316"></div></div><div class="alt-value" style="color:#f97316">4,220 ม.</div></div>
+      <div class="alt-row"><div class="alt-label">Jade Dragon</div><div class="alt-bar-wrap"><div class="alt-bar" style="width:100%;background:#ef4444"></div></div><div class="alt-value" style="color:#ef4444">4,506 ม.</div></div>
+    </div>
+    <p class="section-header">3 ระดับของ Altitude Sickness</p>
+    <div class="alert alert-green" style="margin-bottom:10px"><div class="alert-icon">🟢</div><div class="alert-body"><div class="alert-title">AMS เบา — พบบ่อย อย่ากังวล</div><strong>อาการ:</strong> ปวดหัวเล็กน้อย · เมื่อยล้า · หลับยาก<br><strong>ทำอะไร:</strong> พัก · ดื่มน้ำ · กิน paracetamol</div></div>
+    <div class="alert alert-orange" style="margin-bottom:10px"><div class="alert-icon">🟠</div><div class="alert-body"><div class="alert-title">AMS รุนแรง — ต้องลงมาทันที</div><strong>อาการ:</strong> ปวดหัวมากแม้กินยา · อาเจียนซ้ำ · เดินเซ<br><strong>ทำอะไร:</strong> ลงต่ำทันที · กิน Diamox · ไปโรงพยาบาล</div></div>
+    <div class="alert alert-red" style="margin-bottom:16px"><div class="alert-icon">🔴</div><div class="alert-body"><div class="alert-title">HACE/HAPE — ฉุกเฉิน! โทร 120 ทันที</div><strong>อาการ:</strong> สับสน เดินไม่ได้ ริมฝีปากเขียว ไอเป็นฟองสีชมพู<br><strong>ทำอะไร:</strong> โทร 120 · พาลงต่ำทันที</div></div>
+    <p class="section-header">💊 ป้องกันก่อนไป</p>
+    <div class="checklist-item" onclick="toggleCheck(this)" data-id="alt-1"><div class="check-box">✓</div><div class="check-text">Rhodiola (红景天) — เริ่ม 19 Jul<div class="check-sub">2 เม็ด เช้า-เย็น ต่อเนื่องตลอดทริป</div></div></div>
+    <div class="checklist-item" onclick="toggleCheck(this)" data-id="alt-2"><div class="check-box">✓</div><div class="check-text">Diamox 125 mg — ปรึกษาแพทย์ก่อน<div class="check-sub">เริ่ม 1 วันก่อนขึ้นที่สูง 2,500 ม.</div></div></div>
+    <div class="checklist-item" onclick="toggleCheck(this)" data-id="alt-3"><div class="check-box">✓</div><div class="check-text">ดื่มน้ำ 3–4 ลิตร/วัน ตั้งแต่ Day 1<div class="check-sub">จิบต่อเนื่องทั้งวัน</div></div></div>
+    <div class="checklist-item" onclick="toggleCheck(this)" data-id="alt-4"><div class="check-box">✓</div><div class="check-text">งดแอลกอฮอล์ Day 1–2 อย่างเด็ดขาด<div class="check-sub">แอลกอฮอล์ทำให้ร่างกายปรับ altitude ได้แย่มาก</div></div></div>
+    <div class="checklist-item" onclick="toggleCheck(this)" data-id="alt-5"><div class="check-box">✓</div><div class="check-text">กินคาร์บเยอะๆ — ข้าว ขนมปัง บะหมี่<div class="check-sub">คาร์บใช้ออกซิเจนน้อยกว่าไขมัน</div></div></div>
+    <div class="emergency-card">
+      <div class="ec-title">🚨 เบอร์ฉุกเฉิน</div>
+      <div class="emergency-num"><span class="en-label">🚑 รถพยาบาล (จีน)</span><span class="en-num">120</span></div>
+      <div class="emergency-num"><span class="en-label">👮 ตำรวจ</span><span class="en-num">110</span></div>
+      <div class="emergency-num"><span class="en-label">🗣️ Tourist Hotline (EN)</span><span class="en-num">12301</span></div>
+      <div class="emergency-num"><span class="en-label">🇹🇭 สถานทูตไทย ปักกิ่ง</span><span class="en-num">+86 10 8531 8755</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="main-page" id="page-cn">
+  <div class="content scroll-content">
+    <p class="section-header">🏥 ฉุกเฉิน — โชว์ให้คนจีนอ่านได้เลย</p>
+    <div class="phrase-card" style="background:#fff5f5;border-color:#fecaca"><div style="flex:1"><div class="ph-en" style="color:#b91c1c;font-weight:600">ผมรู้สึกไม่สบาย</div><div class="ph-py">Wǒ bù shū fu</div></div><div style="text-align:right"><div class="ph-cn" style="color:#ef4444;font-size:26px">我不舒服</div></div></div>
+    <div class="phrase-card" style="background:#fff5f5;border-color:#fecaca"><div style="flex:1"><div class="ph-en" style="color:#b91c1c;font-weight:600">ผมมีอาการ altitude sickness</div><div class="ph-py">Gāo yuán fǎn yìng</div></div><div style="text-align:right"><div class="ph-cn" style="color:#ef4444;font-size:20px">高原反应</div></div></div>
+    <div class="phrase-card" style="background:#fff5f5;border-color:#fecaca"><div style="flex:1"><div class="ph-en" style="color:#b91c1c;font-weight:600">ช่วยพาผมไปโรงพยาบาล</div><div class="ph-py">Qǐng dài wǒ qù yī yuàn</div></div><div style="text-align:right"><div class="ph-cn" style="color:#ef4444;font-size:18px">请带我去医院</div></div></div>
+    <p class="section-header">🚉 สนามบิน / สถานีรถไฟ</p>
+    <div class="phrase-card"><div style="flex:1"><div class="ph-en">Kunming Railway Station</div><div class="ph-py">Kūn míng huǒ chē zhàn</div></div><div class="ph-cn">昆明火车站</div></div>
+    <div class="phrase-card"><div style="flex:1"><div class="ph-en">ห้องพักสำหรับผู้โดยสาร</div><div class="ph-py">Xiū xí qū</div></div><div class="ph-cn">休息区</div></div>
+    <div class="phrase-card"><div style="flex:1"><div class="ph-en">รับตั๋วได้ที่ไหน?</div><div class="ph-py">Qǔ piào zài nǎ lǐ?</div></div><div class="ph-cn">取票在哪里？</div></div>
+    <div class="phrase-card"><div style="flex:1"><div class="ph-en">ชานชาลา / Platform</div><div class="ph-py">Zhàn tái</div></div><div class="ph-cn">站台</div></div>
+    <div class="phrase-card"><div style="flex:1"><div class="ph-en">รีบหน่อยได้ไหม</div><div class="ph-py">Qǐng kuài diǎn</div></div><div class="ph-cn">请快点</div></div>
+    <p class="section-header">🍜 ร้านอาหาร</p>
+    <div class="phrase-card"><div style="flex:1"><div class="ph-en">ขอเมนูหน่อย</div><div class="ph-py">Cài dān</div></div><div class="ph-cn">菜单</div></div>
+    <div class="phrase-card"><div style="flex:1"><div class="ph-en">ไม่เอาเผ็ด</div><div class="ph-py">Bù yào là</div></div><div class="ph-cn">不要辣</div></div>
+    <div class="phrase-card"><div style="flex:1"><div class="ph-en">เผ็ดน้อยได้</div><div class="ph-py">Wēi là</div></div><div class="ph-cn">微辣</div></div>
+    <div class="phrase-card"><div style="flex:1"><div class="ph-en">เก็บเงิน</div><div class="ph-py">Mǎi dān</div></div><div class="ph-cn">买单</div></div>
+    <div class="phrase-card"><div style="flex:1"><div class="ph-en">น้ำร้อน</div><div class="ph-py">Rè shuǐ</div></div><div class="ph-cn">热水</div></div>
+    <p class="section-header">💬 ทั่วไป</p>
+    <div class="phrase-card"><div style="flex:1"><div class="ph-en">สวัสดี</div><div class="ph-py">Nǐ hǎo</div></div><div class="ph-cn">你好</div></div>
+    <div class="phrase-card"><div style="flex:1"><div class="ph-en">ขอบคุณ</div><div class="ph-py">Xiè xie</div></div><div class="ph-cn">谢谢</div></div>
+    <div class="phrase-card"><div style="flex:1"><div class="ph-en">ราคาเท่าไหร่?</div><div class="ph-py">Duō shǎo qián?</div></div><div class="ph-cn">多少钱？</div></div>
+    <div class="phrase-card"><div style="flex:1"><div class="ph-en">แพงไป</div><div class="ph-py">Tài guì le</div></div><div class="ph-cn">太贵了</div></div>
+    <div class="phrase-card"><div style="flex:1"><div class="ph-en">ผมเป็นคนไทย</div><div class="ph-py">Wǒ shì tài guó rén</div></div><div class="ph-cn">我是泰国人</div></div>
+    <div class="phrase-card"><div style="flex:1"><div class="ph-en">ห้องน้ำ</div><div class="ph-py">Cè suǒ</div></div><div class="ph-cn">厕所</div></div>
+  </div>
+</div>
+
+<div class="main-page" id="page-budget">
+  <div class="content scroll-content">
+    <div class="alert alert-blue"><div class="alert-icon">ℹ️</div><div class="alert-body"><div class="alert-title">หมายเหตุ</div>ราคาต่อคน · ไม่รวมตั๋วเครื่องบิน BKK-KMG · คืน D0 ค้างสนามบิน = ฟรี ✅</div></div>
+    <p class="section-header">💰 งบประมาณรายหมวด</p>
+    <div style="display:flex;justify-content:space-between;padding:0 6px;margin-bottom:6px">
+      <span style="font-size:11px;color:var(--text3);font-family:'Space Mono',monospace">รายการ</span>
+      <div style="display:flex;gap:8px">
+        <span style="font-size:11px;color:var(--text3);width:60px;text-align:right;font-family:'Space Mono',monospace">CNY</span>
+        <span style="font-size:11px;color:var(--text3);width:65px;text-align:right;font-family:'Space Mono',monospace">บาท</span>
+      </div>
+    </div>
+    <div class="budget-row"><span class="br-item">🛏️ KMG Rest Area (D0)</span><span class="br-cny" style="color:var(--green)">ฟรี</span><span class="br-thb" style="color:var(--green)">0</span></div>
+    <div class="budget-row"><span class="br-item">🚄 KMG → Shangri-La (C118)</span><span class="br-cny">245</span><span class="br-thb">1,180</span></div>
+    <div class="budget-row"><span class="br-item">🚄 Shangri-La → Lijiang (C120)</span><span class="br-cny">63</span><span class="br-thb">300</span></div>
+    <div class="budget-row"><span class="br-item">🚄 Lijiang → KMG (D8748)</span><span class="br-cny">220</span><span class="br-thb">1,060</span></div>
+    <div class="budget-row"><span class="br-item">🥾 Abujicuo Group Tour</span><span class="br-cny">180</span><span class="br-thb">870</span></div>
+    <div class="budget-row"><span class="br-item">🏔️ Jade Dragon (Yak Meadow)</span><span class="br-cny">280</span><span class="br-thb">1,345</span></div>
+    <div class="budget-row"><span class="br-item">💧 Blue Moon Valley + shuttle</span><span class="br-cny">80</span><span class="br-thb">385</span></div>
+    <div class="budget-row"><span class="br-item">🏯 Lijiang ค่าเข้าสถานที่</span><span class="br-cny">160</span><span class="br-thb">770</span></div>
+    <div class="budget-row"><span class="br-item">🚕 Taxi/Didi ทั้งทริป</span><span class="br-cny">650</span><span class="br-thb">3,120</span></div>
+    <div class="budget-row"><span class="br-item">🍜 อาหาร 5 วัน</span><span class="br-cny">600</span><span class="br-thb">2,880</span></div>
+    <div class="budget-row"><span class="br-item">💊 ยา + ของกิน + ของฝาก</span><span class="br-cny">250</span><span class="br-thb">1,200</span></div>
+    <div class="divider"></div>
+    <div class="budget-row budget-total"><span class="br-item">💰 รวมทั้งหมด</span><span class="br-cny">2,728¥</span><span class="br-thb">~13,110฿</span></div>
+    <p class="text-sm mt-8 text-center">แนะนำเตรียมเพิ่ม +20% (~550¥) สำหรับเหตุไม่คาดฝัน</p>
+    <div class="divider"></div>
+    <p class="section-header">💳 วิธีจ่ายเงินในจีน</p>
+    <div class="info-grid">
+      <div class="info-card" style="border-color:#bae6fd;background:#f0f9ff"><div class="ic-label">อันดับ 1</div><div class="ic-value" style="color:var(--primary-dark)">WeChat Pay</div><div class="ic-sub">99% ของร้านรับ</div></div>
+      <div class="info-card" style="border-color:#a7f3d0;background:#f0fdf4"><div class="ic-label">อันดับ 2</div><div class="ic-value" style="color:#065f46">Alipay</div><div class="ic-sub">Backup payment</div></div>
+      <div class="info-card"><div class="ic-label">อันดับ 3</div><div class="ic-value">เงินสด CNY</div><div class="ic-sub">ร้านเล็ก/ตลาด</div></div>
+      <div class="info-card"><div class="ic-label">บัตรเครดิต</div><div class="ic-value">ยากมาก</div><div class="ic-sub">รับแค่โรงแรมใหญ่</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="bottom-nav">
+  <button class="active" onclick="showPage('itin')" id="nav-itin"><span class="bn-icon">📅</span><span>แผนวัน</span><div class="bn-dot"></div></button>
+  <button onclick="showPage('check')" id="nav-check"><span class="bn-icon">✅</span><span>Checklist</span><div class="bn-dot"></div></button>
+  <button onclick="showPage('alt')" id="nav-alt"><span class="bn-icon">🏔️</span><span>Altitude</span><div class="bn-dot"></div></button>
+  <button onclick="showPage('cn')" id="nav-cn"><span class="bn-icon">🗣️</span><span>ภาษาจีน</span><div class="bn-dot"></div></button>
+  <button onclick="showPage('budget')" id="nav-budget"><span class="bn-icon">💰</span><span>งบ</span><div class="bn-dot"></div></button>
+</div>
+
+<script>
+  const STORAGE_KEY = 'yunnan_trip_checks';
+  let checked = {};
+
+  function loadState() {
+    try { const s = localStorage.getItem(STORAGE_KEY); if (s) checked = JSON.parse(s); } catch(e) { checked = {}; }
+  }
+
+  function saveState() {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(checked)); } catch(e) {}
+  }
+
+  function showDay(n) {
+    document.querySelectorAll('.day-page').forEach((el, i) => el.classList.toggle('active', i === n));
+    document.querySelectorAll('.day-tab').forEach((el, i) => el.classList.toggle('active', i === n));
+  }
+
+  function showPage(page) {
+    document.querySelectorAll('.main-page').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.bottom-nav button').forEach(el => el.classList.remove('active'));
+    document.getElementById('page-' + page).classList.add('active');
+    document.getElementById('nav-' + page).classList.add('active');
+    document.querySelector('.day-tabs').style.display = page === 'itin' ? 'flex' : 'none';
+  }
+
+  function toggleCheck(el) {
+    const id = el.dataset.id;
+    const isChecked = el.classList.toggle('checked');
+    checked[id] = isChecked;
+    saveState();
+    updateProgress();
+  }
+
+  function toggleGear(el) { el.classList.toggle('checked'); }
+
+  function updateProgress() {
+    const all = document.querySelectorAll('.checklist-item[data-id]');
+    const done = document.querySelectorAll('.checklist-item[data-id].checked');
+    const pct = all.length ? Math.round((done.length / all.length) * 100) : 0;
+    document.getElementById('progressBar').style.width = pct + '%';
+    document.getElementById('progressText').textContent = pct + '%';
+    document.getElementById('progressPill').textContent = done.length + ' / ' + all.length;
+  }
+
+  function restoreChecks() {
+    document.querySelectorAll('.checklist-item[data-id]').forEach(el => {
+      if (checked[el.dataset.id]) el.classList.add('checked');
+    });
+    updateProgress();
+  }
+
+  loadState();
+  restoreChecks();
+  updateProgress();
+</script>
+</body>
+</html>
