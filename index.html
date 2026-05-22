@@ -62,98 +62,53 @@
     gap: 12px;
   }
 
-  .banner-icon {
-    font-size: 28px;
-    line-height: 1;
-  }
-
+  .banner-icon { font-size: 28px; line-height: 1; }
   .banner-text { flex: 1; }
 
   .banner-text h1 {
-    font-size: 16px;
-    font-weight: 700;
-    color: #fff;
-    line-height: 1.2;
+    font-size: 16px; font-weight: 700; color: #fff; line-height: 1.2;
   }
 
   .banner-text p {
-    font-size: 11px;
-    color: rgba(255,255,255,0.82);
-    font-family: 'Space Mono', monospace;
-    margin-top: 2px;
+    font-size: 11px; color: rgba(255,255,255,0.82);
+    font-family: 'Space Mono', monospace; margin-top: 2px;
   }
 
   .progress-pill {
     background: rgba(255,255,255,0.22);
     border: 1px solid rgba(255,255,255,0.5);
-    color: #fff;
-    font-size: 11px;
+    color: #fff; font-size: 11px;
     font-family: 'Space Mono', monospace;
-    padding: 4px 12px;
-    border-radius: 20px;
-    white-space: nowrap;
-    font-weight: 700;
+    padding: 4px 12px; border-radius: 20px;
+    white-space: nowrap; font-weight: 700;
   }
 
   /* ─── DAY TABS ─── */
   .day-tabs {
-    display: flex;
-    gap: 0;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    padding: 0 8px;
-    background: #fff;
+    display: flex; gap: 0; overflow-x: auto;
+    scrollbar-width: none; -ms-overflow-style: none;
+    padding: 0 8px; background: #fff;
   }
   .day-tabs::-webkit-scrollbar { display: none; }
 
   .day-tab {
-    flex-shrink: 0;
-    padding: 10px 16px 12px;
-    border: none;
-    background: transparent;
-    color: var(--text3);
-    font-family: 'Kanit', sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-    cursor: pointer;
-    border-bottom: 3px solid transparent;
-    transition: all 0.2s;
-    white-space: nowrap;
+    flex-shrink: 0; padding: 10px 16px 12px; border: none;
+    background: transparent; color: var(--text3);
+    font-family: 'Kanit', sans-serif; font-size: 12px; font-weight: 400;
+    cursor: pointer; border-bottom: 3px solid transparent;
+    transition: all 0.2s; white-space: nowrap;
   }
 
-  .day-tab.active {
-    color: var(--primary-dark);
-    border-bottom-color: var(--primary);
-    font-weight: 600;
-  }
-
-  .day-tab .day-num {
-    display: block;
-    font-size: 18px;
-    font-weight: 800;
-    line-height: 1;
-    margin-bottom: 2px;
-    font-family: 'Space Mono', monospace;
-  }
-
-  .day-tab .day-label {
-    display: block;
-    font-size: 10px;
-  }
-
+  .day-tab.active { color: var(--primary-dark); border-bottom-color: var(--primary); font-weight: 600; }
+  .day-tab .day-num { display: block; font-size: 18px; font-weight: 800; line-height: 1; margin-bottom: 2px; font-family: 'Space Mono', monospace; }
+  .day-tab .day-label { display: block; font-size: 10px; }
   .day-tab.danger .day-num { color: var(--orange); }
   .day-tab.active.danger { border-bottom-color: var(--orange); color: var(--orange); }
   .day-tab.active .day-num { color: var(--primary); }
   .day-tab.active.danger .day-num { color: var(--orange); }
 
   /* ─── CONTENT ─── */
-  .content {
-    padding: 16px;
-    position: relative;
-    max-width: 600px;
-    margin: 0 auto;
-  }
+  .content { padding: 16px; position: relative; max-width: 600px; margin: 0 auto; }
 
   .day-page { display: none; animation: fadeUp 0.3s ease; }
   .day-page.active { display: block; }
@@ -165,90 +120,49 @@
 
   /* ─── DAY HERO ─── */
   .day-hero {
-    border-radius: var(--radius);
-    padding: 20px;
-    margin-bottom: 16px;
-    position: relative;
-    overflow: hidden;
-    color: #fff;
+    border-radius: var(--radius); padding: 20px; margin-bottom: 16px;
+    position: relative; overflow: hidden; color: #fff;
   }
 
   .day-hero::after {
-    content: var(--hero-emoji, '🏔️');
-    position: absolute;
-    right: -8px;
-    bottom: -8px;
-    font-size: 80px;
-    opacity: 0.18;
-    line-height: 1;
-    pointer-events: none;
+    content: var(--hero-emoji, '🏔️'); position: absolute;
+    right: -8px; bottom: -8px; font-size: 80px;
+    opacity: 0.18; line-height: 1; pointer-events: none;
   }
 
   .day-hero-badge {
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    color: rgba(255,255,255,0.85);
-    background: rgba(255,255,255,0.2);
-    padding: 3px 10px;
-    border-radius: 20px;
-    display: inline-block;
-    margin-bottom: 10px;
-    letter-spacing: 0.06em;
+    font-family: 'Space Mono', monospace; font-size: 10px;
+    color: rgba(255,255,255,0.85); background: rgba(255,255,255,0.2);
+    padding: 3px 10px; border-radius: 20px; display: inline-block;
+    margin-bottom: 10px; letter-spacing: 0.06em;
   }
 
-  .day-hero h2 {
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 1.3;
-    margin-bottom: 10px;
-  }
+  .day-hero h2 { font-size: 20px; font-weight: 700; line-height: 1.3; margin-bottom: 10px; }
 
-  .day-hero-meta {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
+  .day-hero-meta { display: flex; gap: 8px; flex-wrap: wrap; }
 
   .meta-chip {
-    font-size: 11px;
-    color: rgba(255,255,255,0.9);
-    background: rgba(255,255,255,0.18);
-    padding: 4px 10px;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    backdrop-filter: blur(4px);
+    font-size: 11px; color: rgba(255,255,255,0.9);
+    background: rgba(255,255,255,0.18); padding: 4px 10px;
+    border-radius: 20px; display: flex; align-items: center;
+    gap: 4px; backdrop-filter: blur(4px);
   }
 
-  /* Hero gradient presets */
   .hero-blue { background: linear-gradient(135deg, #0ea5e9, #6366f1); }
   .hero-orange { background: linear-gradient(135deg, #f97316, #ef4444); }
   .hero-green { background: linear-gradient(135deg, #10b981, #0ea5e9); }
   .hero-purple { background: linear-gradient(135deg, #8b5cf6, #ec4899); }
 
-  /* ─── ALERT BOX ─── */
+  /* ─── ALERT ─── */
   .alert {
-    border-radius: var(--radius-sm);
-    padding: 12px 14px;
-    margin-bottom: 12px;
-    font-size: 13px;
-    line-height: 1.55;
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-    box-shadow: var(--shadow-sm);
+    border-radius: var(--radius-sm); padding: 12px 14px; margin-bottom: 12px;
+    font-size: 13px; line-height: 1.55; display: flex; gap: 10px;
+    align-items: flex-start; box-shadow: var(--shadow-sm);
   }
 
   .alert-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
-
   .alert-body { flex: 1; }
-
-  .alert-title {
-    font-weight: 600;
-    font-size: 13px;
-    margin-bottom: 4px;
-  }
+  .alert-title { font-weight: 600; font-size: 13px; margin-bottom: 4px; }
 
   .alert-red { background: var(--red-light); border-left: 4px solid var(--red); }
   .alert-red .alert-title { color: var(--red); }
@@ -263,244 +177,100 @@
 
   /* ─── SECTION HEADER ─── */
   .section-header {
-    font-size: 11px;
-    font-family: 'Space Mono', monospace;
-    color: var(--text3);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin: 20px 0 10px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    font-size: 11px; font-family: 'Space Mono', monospace; color: var(--text3);
+    letter-spacing: 0.1em; text-transform: uppercase; margin: 20px 0 10px;
+    display: flex; align-items: center; gap: 8px;
   }
-  .section-header::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
+  .section-header::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
-  /* ─── TIMELINE */
+  /* ─── TIMELINE ─── */
   .timeline { position: relative; }
 
-  .timeline-item {
-    display: flex;
-    gap: 12px;
-    margin-bottom: 3px;
-    position: relative;
-  }
+  .timeline-item { display: flex; gap: 12px; margin-bottom: 3px; position: relative; }
 
   .timeline-item::before {
-    content: '';
-    position: absolute;
-    left: 58px;
-    top: 30px;
-    bottom: -3px;
-    width: 2px;
-    background: var(--border);
+    content: ''; position: absolute; left: 58px; top: 30px; bottom: -3px;
+    width: 2px; background: var(--border);
   }
-
   .timeline-item:last-child::before { display: none; }
 
   .timeline-time {
-    width: 50px;
-    flex-shrink: 0;
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    color: var(--text3);
-    text-align: right;
-    padding-top: 10px;
-    line-height: 1.2;
-    font-weight: 700;
+    width: 50px; flex-shrink: 0; font-family: 'Space Mono', monospace;
+    font-size: 10px; color: var(--text3); text-align: right;
+    padding-top: 10px; line-height: 1.2; font-weight: 700;
   }
 
   .timeline-dot {
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background: #fff;
-    border: 3px solid var(--border);
-    flex-shrink: 0;
-    margin-top: 9px;
-    position: relative;
-    z-index: 1;
-    box-shadow: 0 0 0 2px #fff;
+    width: 14px; height: 14px; border-radius: 50%; background: #fff;
+    border: 3px solid var(--border); flex-shrink: 0; margin-top: 9px;
+    position: relative; z-index: 1; box-shadow: 0 0 0 2px #fff;
   }
-
   .timeline-dot.highlight { border-color: var(--primary); background: var(--primary); }
   .timeline-dot.danger { border-color: var(--red); background: var(--red); }
   .timeline-dot.success { border-color: var(--green); background: var(--green); }
   .timeline-dot.warn { border-color: var(--orange); background: var(--orange); }
 
   .timeline-body {
-    flex: 1;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 9px 13px;
-    margin-bottom: 3px;
+    flex: 1; background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: 9px 13px; margin-bottom: 3px;
     box-shadow: var(--shadow-sm);
   }
-
   .timeline-body.highlight { border-color: #bae6fd; background: #f0f9ff; }
   .timeline-body.danger { border-color: #fecaca; background: #fff5f5; }
   .timeline-body.success { border-color: #a7f3d0; background: #f0fdf4; }
   .timeline-body.warn { border-color: #fed7aa; background: #fff7ed; }
-
   .timeline-body p { font-size: 13px; line-height: 1.55; color: var(--text); }
   .timeline-body .tl-note { font-size: 11px; color: var(--text2); margin-top: 4px; }
 
   /* ─── CHECKLIST ─── */
   .checklist-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 12px 14px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    margin-bottom: 8px;
-    cursor: pointer;
-    transition: all 0.18s;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-    box-shadow: var(--shadow-sm);
+    display: flex; align-items: flex-start; gap: 12px; padding: 12px 14px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); margin-bottom: 8px; cursor: pointer;
+    transition: all 0.18s; user-select: none;
+    -webkit-tap-highlight-color: transparent; box-shadow: var(--shadow-sm);
   }
-
   .checklist-item:active { transform: scale(0.98); }
-
-  .checklist-item.checked {
-    background: var(--green-light);
-    border-color: #a7f3d0;
-  }
-
-  .checklist-item.checked .check-text {
-    text-decoration: line-through;
-    color: var(--text3);
-  }
+  .checklist-item.checked { background: var(--green-light); border-color: #a7f3d0; }
+  .checklist-item.checked .check-text { text-decoration: line-through; color: var(--text3); }
 
   .check-box {
-    width: 22px;
-    height: 22px;
-    border-radius: 7px;
-    border: 2px solid var(--border);
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.18s;
-    margin-top: 1px;
-    font-size: 13px;
-    color: transparent;
-    background: var(--bg);
+    width: 22px; height: 22px; border-radius: 7px; border: 2px solid var(--border);
+    flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+    transition: all 0.18s; margin-top: 1px; font-size: 13px;
+    color: transparent; background: var(--bg);
   }
-
-  .checklist-item.checked .check-box {
-    background: var(--green);
-    border-color: var(--green);
-    color: #fff;
-  }
-
+  .checklist-item.checked .check-box { background: var(--green); border-color: var(--green); color: #fff; }
   .check-text { font-size: 13px; line-height: 1.5; flex: 1; }
   .check-sub { font-size: 11px; color: var(--text2); margin-top: 2px; }
 
   /* ─── INFO CARDS ─── */
-  .info-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-bottom: 14px;
-  }
-
-  .info-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 14px;
-    box-shadow: var(--shadow-sm);
-  }
-
-  .info-card .ic-label {
-    font-size: 10px;
-    color: var(--text3);
-    font-family: 'Space Mono', monospace;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 5px;
-  }
-
-  .info-card .ic-value {
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--text);
-    line-height: 1.3;
-  }
-
-  .info-card .ic-sub {
-    font-size: 11px;
-    color: var(--text2);
-    margin-top: 3px;
-  }
+  .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 14px; }
+  .info-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 14px; box-shadow: var(--shadow-sm); }
+  .info-card .ic-label { font-size: 10px; color: var(--text3); font-family: 'Space Mono', monospace; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 5px; }
+  .info-card .ic-value { font-size: 14px; font-weight: 700; color: var(--text); line-height: 1.3; }
+  .info-card .ic-sub { font-size: 11px; color: var(--text2); margin-top: 3px; }
 
   /* ─── TRANSPORT CARD ─── */
   .transport-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 14px 16px;
-    margin-bottom: 10px;
-    display: flex;
-    gap: 14px;
-    align-items: center;
-    box-shadow: var(--shadow-sm);
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 14px 16px; margin-bottom: 10px;
+    display: flex; gap: 14px; align-items: center; box-shadow: var(--shadow-sm);
   }
-
   .transport-icon { font-size: 30px; flex-shrink: 0; }
   .transport-info { flex: 1; }
-
-  .transport-info .t-route {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 3px;
-    color: var(--text);
-  }
-
-  .transport-info .t-detail {
-    font-size: 12px;
-    color: var(--text2);
-    line-height: 1.4;
-  }
-
+  .transport-info .t-route { font-size: 14px; font-weight: 600; margin-bottom: 3px; color: var(--text); }
+  .transport-info .t-detail { font-size: 12px; color: var(--text2); line-height: 1.4; }
   .transport-badge {
-    font-family: 'Space Mono', monospace;
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--primary-dark);
-    background: var(--primary-light);
-    border: 1.5px solid #bae6fd;
-    padding: 5px 12px;
-    border-radius: 8px;
-    text-align: center;
-    flex-shrink: 0;
+    font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700;
+    color: var(--primary-dark); background: var(--primary-light);
+    border: 1.5px solid #bae6fd; padding: 5px 12px; border-radius: 8px;
+    text-align: center; flex-shrink: 0;
   }
 
   /* ─── REST OPTIONS ─── */
-  .rest-options {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 8px;
-    margin-bottom: 14px;
-  }
-
-  .rest-option {
-    background: var(--surface);
-    border: 1.5px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 12px 8px;
-    text-align: center;
-    box-shadow: var(--shadow-sm);
-  }
-
+  .rest-options { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 14px; }
+  .rest-option { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 12px 8px; text-align: center; box-shadow: var(--shadow-sm); }
   .rest-option.best { border-color: #6ee7b7; background: var(--green-light); }
   .rest-option .ro-title { font-size: 12px; font-weight: 700; margin-bottom: 5px; color: #065f46; }
   .rest-option .ro-sub { font-size: 10px; color: var(--text2); line-height: 1.5; }
@@ -509,64 +279,25 @@
 
   /* ─── RESTAURANT CARDS ─── */
   .restaurant {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 14px 16px;
-    margin-bottom: 8px;
-    box-shadow: var(--shadow-sm);
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: 14px 16px; margin-bottom: 8px;
+    box-shadow: var(--shadow-sm); display: flex; gap: 12px; align-items: flex-start;
   }
-
   .restaurant-emoji { font-size: 28px; flex-shrink: 0; margin-top: 2px; }
-
   .restaurant-body { flex: 1; }
-
   .restaurant .r-name { font-size: 14px; font-weight: 700; margin-bottom: 2px; color: var(--text); }
   .restaurant .r-cn { font-size: 10px; color: var(--text3); font-family: 'Space Mono', monospace; margin-bottom: 4px; }
   .restaurant .r-detail { font-size: 12px; color: var(--text2); line-height: 1.5; }
   .restaurant .r-price {
-    display: inline-block;
-    font-family: 'Space Mono', monospace;
-    font-size: 11px;
-    color: var(--orange);
-    background: var(--orange-light);
-    border: 1px solid #fed7aa;
-    padding: 2px 9px;
-    border-radius: 5px;
-    margin-top: 6px;
-    font-weight: 700;
+    display: inline-block; font-family: 'Space Mono', monospace; font-size: 11px;
+    color: var(--orange); background: var(--orange-light); border: 1px solid #fed7aa;
+    padding: 2px 9px; border-radius: 5px; margin-top: 6px; font-weight: 700;
   }
 
   /* ─── ALTITUDE BARS ─── */
-  .altitude-section {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 16px;
-    margin-bottom: 14px;
-    box-shadow: var(--shadow);
-  }
-
-  .alt-title {
-    font-size: 12px;
-    font-family: 'Space Mono', monospace;
-    color: var(--text2);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 14px;
-    font-weight: 700;
-  }
-
-  .alt-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-  }
-
+  .altitude-section { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin-bottom: 14px; box-shadow: var(--shadow); }
+  .alt-title { font-size: 12px; font-family: 'Space Mono', monospace; color: var(--text2); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 14px; font-weight: 700; }
+  .alt-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
   .alt-label { font-size: 12px; color: var(--text2); width: 72px; flex-shrink: 0; font-weight: 500; }
   .alt-bar-wrap { flex: 1; height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
   .alt-bar { height: 100%; border-radius: 4px; transition: width 0.8s ease; }
@@ -574,244 +305,94 @@
 
   /* ─── PHRASE CARDS ─── */
   .phrase-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 11px 14px;
-    margin-bottom: 7px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    box-shadow: var(--shadow-sm);
-    transition: box-shadow 0.15s;
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
+    padding: 11px 14px; margin-bottom: 7px; display: flex; align-items: center;
+    gap: 12px; box-shadow: var(--shadow-sm); transition: box-shadow 0.15s;
   }
-
   .phrase-card:active { box-shadow: var(--shadow); }
-
   .phrase-card .ph-en { font-size: 12px; color: var(--text2); flex: 1; }
   .phrase-card .ph-cn { font-size: 20px; font-weight: 800; color: var(--primary-dark); }
   .phrase-card .ph-py { font-size: 10px; color: var(--text3); font-family: 'Space Mono', monospace; margin-top: 2px; }
 
   /* ─── PROGRESS ─── */
-  .overall-progress {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 16px;
-    margin-bottom: 16px;
-    box-shadow: var(--shadow);
-  }
-
-  .prog-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
-  }
-
+  .overall-progress { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; margin-bottom: 16px; box-shadow: var(--shadow); }
+  .prog-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
   .prog-header span:first-child { font-size: 14px; font-weight: 600; color: var(--text); }
   .prog-header span:last-child { font-family: 'Space Mono', monospace; font-size: 14px; color: var(--green); font-weight: 700; }
-
   .prog-bar-wrap { height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; }
   .prog-bar { height: 100%; background: linear-gradient(90deg, var(--primary), var(--green)); border-radius: 4px; transition: width 0.4s ease; }
 
   /* ─── GEAR GRID ─── */
   .gear-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-bottom: 16px; }
-
   .gear-item {
-    background: var(--surface);
-    border: 1.5px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 10px 13px;
-    font-size: 13px;
-    cursor: pointer;
-    display: flex;
-    gap: 8px;
-    align-items: center;
-    transition: all 0.18s;
-    -webkit-tap-highlight-color: transparent;
-    box-shadow: var(--shadow-sm);
-    color: var(--text);
+    background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius-sm);
+    padding: 10px 13px; font-size: 13px; cursor: pointer; display: flex; gap: 8px;
+    align-items: center; transition: all 0.18s; -webkit-tap-highlight-color: transparent;
+    box-shadow: var(--shadow-sm); color: var(--text);
   }
-
   .gear-item.checked { background: var(--green-light); border-color: #6ee7b7; }
   .gear-item.checked span { text-decoration: line-through; color: var(--text3); }
 
-  /* ─── CABLE CAR COMPARISON ─── */
+  /* ─── CABLE CAR ─── */
   .cable-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 14px; }
-
-  .cable-card {
-    background: var(--surface);
-    border: 1.5px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 12px 10px;
-    text-align: center;
-    box-shadow: var(--shadow-sm);
-  }
-
+  .cable-card { background: var(--surface); border: 1.5px solid var(--border); border-radius: var(--radius-sm); padding: 12px 10px; text-align: center; box-shadow: var(--shadow-sm); }
   .cable-card.recommended { border-color: #6ee7b7; background: var(--green-light); }
   .cable-card .cc-name { font-size: 12px; font-weight: 700; margin-bottom: 4px; }
   .cable-card .cc-alt { font-family: 'Space Mono', monospace; font-size: 11px; color: var(--text2); margin-bottom: 7px; }
   .cable-card .cc-tag { font-size: 11px; padding: 3px 8px; border-radius: 5px; display: inline-block; font-weight: 700; }
   .cable-card .cc-pros { font-size: 10px; color: var(--text2); margin-top: 8px; line-height: 1.6; text-align: left; }
-
-  .recommended-badge {
-    font-size: 9px;
-    background: var(--green);
-    color: #fff;
-    font-weight: 700;
-    padding: 2px 7px;
-    border-radius: 4px;
-    display: inline-block;
-    margin-bottom: 5px;
-    letter-spacing: 0.04em;
-  }
+  .recommended-badge { font-size: 9px; background: var(--green); color: #fff; font-weight: 700; padding: 2px 7px; border-radius: 4px; display: inline-block; margin-bottom: 5px; letter-spacing: 0.04em; }
 
   /* ─── EMERGENCY ─── */
-  .emergency-card {
-    background: #fff5f5;
-    border: 1.5px solid #fecaca;
-    border-radius: var(--radius);
-    padding: 16px;
-    margin-bottom: 12px;
-    box-shadow: var(--shadow-sm);
-  }
-
-  .emergency-card .ec-title {
-    font-size: 12px;
-    color: var(--red);
-    font-family: 'Space Mono', monospace;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin-bottom: 12px;
-    font-weight: 700;
-  }
-
-  .emergency-num {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 9px 0;
-    border-bottom: 1px solid #fee2e2;
-  }
-
+  .emergency-card { background: #fff5f5; border: 1.5px solid #fecaca; border-radius: var(--radius); padding: 16px; margin-bottom: 12px; box-shadow: var(--shadow-sm); }
+  .emergency-card .ec-title { font-size: 12px; color: var(--red); font-family: 'Space Mono', monospace; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px; font-weight: 700; }
+  .emergency-num { display: flex; justify-content: space-between; align-items: center; padding: 9px 0; border-bottom: 1px solid #fee2e2; }
   .emergency-num:last-child { border-bottom: none; }
   .emergency-num .en-label { font-size: 13px; color: var(--text2); }
   .emergency-num .en-num { font-family: 'Space Mono', monospace; font-size: 17px; color: var(--red); font-weight: 800; }
 
   /* ─── BUDGET ─── */
-  .budget-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 11px 15px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    margin-bottom: 7px;
-    font-size: 13px;
-    box-shadow: var(--shadow-sm);
-  }
-
+  .budget-row { display: flex; justify-content: space-between; align-items: center; padding: 11px 15px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); margin-bottom: 7px; font-size: 13px; box-shadow: var(--shadow-sm); }
   .budget-row .br-item { color: var(--text); flex: 1; }
   .budget-row .br-cny { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--text2); width: 60px; text-align: right; }
   .budget-row .br-thb { font-family: 'Space Mono', monospace; font-size: 12px; color: var(--orange); width: 65px; text-align: right; font-weight: 700; }
-
-  .budget-total {
-    background: linear-gradient(135deg, #fff7ed, #fef3c7);
-    border: 2px solid var(--yellow);
-    font-weight: 700;
-    box-shadow: var(--shadow);
-  }
-
+  .budget-total { background: linear-gradient(135deg, #fff7ed, #fef3c7); border: 2px solid var(--yellow); font-weight: 700; box-shadow: var(--shadow); }
   .budget-total .br-item { color: #92400e; font-size: 14px; }
   .budget-total .br-cny { color: #92400e; font-size: 13px; }
   .budget-total .br-thb { color: var(--orange); font-size: 14px; }
 
   /* ─── BOTTOM NAV ─── */
   .bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0; right: 0;
-    background: #ffffff;
-    border-top: 1px solid var(--border);
-    box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
-    display: flex;
-    padding: env(safe-area-inset-bottom, 0) 0 0;
-    z-index: 100;
+    position: fixed; bottom: 0; left: 0; right: 0; background: #ffffff;
+    border-top: 1px solid var(--border); box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+    display: flex; padding: env(safe-area-inset-bottom, 0) 0 0; z-index: 100;
   }
-
   .bottom-nav button {
-    flex: 1;
-    padding: 10px 4px 12px;
-    background: transparent;
-    border: none;
-    color: var(--text3);
-    font-family: 'Kanit', sans-serif;
-    font-size: 10px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 3px;
-    transition: color 0.18s;
-    -webkit-tap-highlight-color: transparent;
+    flex: 1; padding: 10px 4px 12px; background: transparent; border: none;
+    color: var(--text3); font-family: 'Kanit', sans-serif; font-size: 10px;
+    cursor: pointer; display: flex; flex-direction: column; align-items: center;
+    gap: 3px; transition: color 0.18s; -webkit-tap-highlight-color: transparent;
   }
-
   .bottom-nav button.active { color: var(--primary); }
   .bottom-nav button .bn-icon { font-size: 21px; line-height: 1; }
-  .bottom-nav button .bn-dot {
-    width: 4px; height: 4px;
-    border-radius: 50%;
-    background: var(--primary);
-    display: none;
-    margin-top: -2px;
-  }
+  .bottom-nav button .bn-dot { width: 4px; height: 4px; border-radius: 50%; background: var(--primary); display: none; margin-top: -2px; }
   .bottom-nav button.active .bn-dot { display: block; }
 
   /* ─── MAIN PAGES ─── */
   .main-page { display: none; }
   .main-page.active { display: block; }
-
   .scroll-content { padding-bottom: calc(72px + env(safe-area-inset-bottom, 0)); }
 
   .divider { height: 1px; background: var(--border); margin: 16px 0; }
-
   .mt-8 { margin-top: 8px; }
   .text-sm { font-size: 12px; color: var(--text2); line-height: 1.6; }
   .text-center { text-align: center; }
 
   /* ─── STAT ROW ─── */
-  .stat-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    margin-bottom: 14px;
-  }
-
-  .stat-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 12px 8px;
-    text-align: center;
-    box-shadow: var(--shadow-sm);
-  }
-
-  .stat-card .s-val {
-    font-size: 18px;
-    font-weight: 800;
-    font-family: 'Space Mono', monospace;
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-
-  .stat-card .s-label {
-    font-size: 10px;
-    color: var(--text3);
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
+  .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 14px; }
+  .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 12px 8px; text-align: center; box-shadow: var(--shadow-sm); }
+  .stat-card .s-val { font-size: 18px; font-weight: 800; font-family: 'Space Mono', monospace; line-height: 1; margin-bottom: 4px; }
+  .stat-card .s-label { font-size: 10px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; }
 </style>
 </head>
 <body>
@@ -854,36 +435,28 @@
   </div>
 </div>
 
-<!-- MAIN PAGES -->
+<!-- ITINERARY PAGE -->
 <div id="page-itin" class="main-page active">
   <div class="scroll-content">
 
-    <!-- ════════════════ DAY 0 ════════════════ -->
+    <!-- DAY 0 -->
     <div class="day-page active" id="day-0">
       <div class="content">
         <div class="day-hero hero-blue" style="--hero-emoji:'✈️'">
-          <div class="day-hero-badge">DAY 0 · 24 JUL 2026</div>
-          <h2>BKK → Kunming<br>เดินทางถึง!</h2>
+          <div class="day-hero-badge">DAY 0 · 24 JUL 2026 · FRIDAY</div>
+          <h2>BKK → Kunming<br>เดินทางสู่ยูนนาน</h2>
           <div class="day-hero-meta">
-            <span class="meta-chip">✈️ Air Asia</span>
-            <span class="meta-chip">🛬 KMG 14:05</span>
-            <span class="meta-chip">🏙️ Kunming</span>
+            <span class="meta-chip">✈️ FD566</span>
+            <span class="meta-chip">🛬 14:05 KMG</span>
+            <span class="meta-chip">🏙️ Kunming คืน</span>
           </div>
         </div>
 
         <div class="alert alert-orange">
-          <div class="alert-icon">🛂</div>
+          <div class="alert-icon">📋</div>
           <div class="alert-body">
-            <div class="alert-title">ด่านตรวจคนเข้าเมือง</div>
-            เตรียม Arrival Card · เบิกเงิน CNY ที่ ATM ในสนามบิน (กดก่อนเข้าเมือง) · ซิม China: ซื้อที่เคาน์เตอร์ในสนามบิน
-          </div>
-        </div>
-
-        <div class="alert alert-blue">
-          <div class="alert-icon">📱</div>
-          <div class="alert-body">
-            <div class="alert-title">VPN + แอปที่ต้องเปิดก่อนลงจากเครื่อง</div>
-            เปิด VPN ก่อนเข้า China · ติดตั้ง Alipay/WeChat Pay ให้เสร็จก่อนบิน · Maps.me ดาวน์โหลด Offline Map Yunnan
+            <div class="alert-title">ด่านตรวจ + สิ่งที่ต้องทำในสนามบิน KMG</div>
+            ผ่าน Immigration · เบิก CNY ที่ ATM ในสนามบิน · ซื้อซิมจีน · เปิด VPN ก่อนออกจากสนามบิน
           </div>
         </div>
 
@@ -891,64 +464,44 @@
         <div class="timeline">
           <div class="timeline-item"><div class="timeline-time">04:30</div><div class="timeline-dot warn"></div><div class="timeline-body warn"><p>⏰ ตื่นนอน · เตรียมตัว</p></div></div>
           <div class="timeline-item"><div class="timeline-time">06:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🚕 ออกเดินทางไป DMK</p></div></div>
-          <div class="timeline-item"><div class="timeline-time">08:30</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>✈️ FD566 ออกจาก DMK · 08:30<br><span class="tl-note">Don Mueang → Kunming Changshui (KMG)</span></p></div></div>
-          <div class="timeline-item"><div class="timeline-time">14:05</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🛬 ลงจอด KMG · เวลาจีน +1 ชม.<br><span class="tl-note">ผ่าน Immigration · รับกระเป๋า · ซื้อซิม · เบิก CNY</span></p></div></div>
-          <div class="timeline-item"><div class="timeline-time">15:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>🚇 Airport Express → ใจกลางเมือง<br><span class="tl-note">หรือ DiDi ~80¥</span></p></div></div>
-          <div class="timeline-item"><div class="timeline-time">16:30</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>🏨 Check-in โรงแรม Kunming<br><span class="tl-note">พักผ่อน อาบน้ำ เตรียมตัว</span></p></div></div>
-          <div class="timeline-item"><div class="timeline-time">18:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>🍜 ลองข้าวต้มหม้อไฟ / ผัดผักยูนนาน<br><span class="tl-note">แถวโรงแรม ไม่ไปไกล ประหยัดแรง</span></p></div></div>
+          <div class="timeline-item"><div class="timeline-time">08:30</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>✈️ FD566 ออกจาก DMK<br><span class="tl-note">Don Mueang → Kunming Changshui (KMG)</span></p></div></div>
+          <div class="timeline-item"><div class="timeline-time">14:05</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🛬 ลงจอด KMG · +1 ชม. time zone<br><span class="tl-note">ผ่าน Immigration · รับกระเป๋า · ซื้อซิม · เบิก CNY</span></p></div></div>
+          <div class="timeline-item"><div class="timeline-time">15:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>🚇 Airport Express หรือ DiDi → ใจกลางเมือง</p></div></div>
+          <div class="timeline-item"><div class="timeline-time">16:30</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>🏨 Check-in โรงแรม Kunming · พัก/อาบน้ำ</p></div></div>
+          <div class="timeline-item"><div class="timeline-time">19:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🍜 ลองอาหารยูนนานใกล้โรงแรม<br><span class="tl-note">เห็ดหม้อไฟ / ข้าวผัดสับปะรด · ไม่ไปไกล ประหยัดแรง</span></p></div></div>
           <div class="timeline-item"><div class="timeline-time">21:00</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>💤 เข้านอนเร็ว — พรุ่งนี้บินเช้า!</p></div></div>
         </div>
 
-        <p class="section-header">เที่ยวบินรายละเอียด</p>
+        <p class="section-header">เที่ยวบิน</p>
         <div class="transport-card">
           <div class="transport-icon">✈️</div>
           <div class="transport-info">
-            <div class="t-route">DMK → KMG</div>
-            <div class="t-detail">FD566 · Air Asia · 24 Jul 2026<br>ออก 08:30 · ถึง 14:05 (+1 hr time zone)</div>
+            <div class="t-route">DMK → KMG (Kunming)</div>
+            <div class="t-detail">FD566 · Air Asia · 24 Jul 2026<br>ออก 08:30 · ถึง 14:05 (เวลาจีน)</div>
           </div>
           <div class="transport-badge">FD566</div>
-        </div>
-
-        <p class="section-header">🍽️ ร้านอาหารแนะนำ Kunming</p>
-        <div class="restaurant">
-          <div class="restaurant-emoji">🍄</div>
-          <div class="restaurant-body">
-            <div class="r-name">ร้านเห็ดยูนนาน (หม้อไฟ)</div>
-            <div class="r-cn">云南野生菌火锅</div>
-            <div class="r-detail">เห็ดป่าสดหลากหลายชนิด · ต้มในน้ำซุปใส · อร่อยมาก</div>
-            <div class="r-price">~80-120¥/คน</div>
-          </div>
-        </div>
-        <div class="restaurant">
-          <div class="restaurant-emoji">🌶️</div>
-          <div class="restaurant-body">
-            <div class="r-name">ข้าวผัดสับปะรดยูนนาน</div>
-            <div class="r-cn">菠萝饭</div>
-            <div class="r-detail">ข้าวผัดในลูกสับปะรด · ของ signature ยูนนาน</div>
-            <div class="r-price">~30-50¥</div>
-          </div>
         </div>
       </div>
     </div>
 
-    <!-- ════════════════ DAY 1 ════════════════ -->
+    <!-- DAY 1 -->
     <div class="day-page" id="day-1">
       <div class="content">
         <div class="day-hero hero-blue" style="--hero-emoji:'🏔️'">
-          <div class="day-hero-badge">DAY 1 · 25 JUL 2026</div>
+          <div class="day-hero-badge">DAY 1 · 25 JUL 2026 · SATURDAY</div>
           <h2>KMG → Shangri-La<br>ขึ้นสู่ดินแดนแห่งสายหมอก</h2>
           <div class="day-hero-meta">
             <span class="meta-chip">✈️ KMG→DIG</span>
             <span class="meta-chip">⛰️ 3,200 ม.</span>
-            <span class="meta-chip">🌬️ Acclimatize</span>
+            <span class="meta-chip">🌬️ Acclimatize Day</span>
           </div>
         </div>
 
         <div class="alert alert-red">
           <div class="alert-icon">🩺</div>
           <div class="alert-body">
-            <div class="alert-title">⚠️ Altitude Warning — วันแรกที่ 3,200 ม.</div>
-            กินยา Diamox ก่อนถึง 1 วัน · ดื่มน้ำ 3L/วัน · ห้ามวิ่ง/ออกกำลังกายหนัก · ถ้าปวดหัวรุนแรง/อาเจียน → ลงทันที
+            <div class="alert-title">⚠️ วันแรกที่ 3,200 ม. — ห้ามรีบ!</div>
+            กิน Diamox ก่อนถึง 1 วัน · ดื่มน้ำ 3L+ · ห้ามออกกำลังหนัก · ถ้าปวดหัวรุนแรง/อาเจียน → ลงทันที
           </div>
         </div>
 
@@ -957,31 +510,31 @@
           <div class="transport-icon">✈️</div>
           <div class="transport-info">
             <div class="t-route">KMG → DIG (Shangri-La)</div>
-            <div class="t-detail">25 Jul · เช้าตรู่ · เช็คตั๋วล่วงหน้า<br>Diqing Shangri-La Airport (DIG)</div>
+            <div class="t-detail">25 Jul · เช้าตรู่ · เช็คเวลาจริงกับตั๋ว<br>Diqing Shangri-La Airport (DIG) · ~1 ชม.</div>
           </div>
           <div class="transport-badge">KMG→DIG</div>
         </div>
 
         <p class="section-header">Timeline วันนี้</p>
         <div class="timeline">
-          <div class="timeline-item"><div class="timeline-time">05:00</div><div class="timeline-dot warn"></div><div class="timeline-body warn"><p>⏰ ตื่น · เก็บกระเป๋า · Check-out</p></div></div>
-          <div class="timeline-item"><div class="timeline-time">06:00</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>✈️ บิน KMG → DIG<br><span class="tl-note">~1 ชม. · เช็คเวลาจริงกับตั๋ว</span></p></div></div>
-          <div class="timeline-item"><div class="timeline-time">09:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🛬 ถึง DIG · รถรับจาก Guesthouse หรือ DiDi</p></div></div>
-          <div class="timeline-item"><div class="timeline-time">10:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🚶 เดินชม Dukezong Ancient Town<br><span class="tl-note">เดินสบายๆ ไม่รีบ · หายใจลึกๆ</span></p></div></div>
-          <div class="timeline-item"><div class="timeline-time">12:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🍜 กินข้าวกลางวัน · อาหารทิเบต<br><span class="tl-note">Tsampa · Butter Tea · Yak Meat</span></p></div></div>
-          <div class="timeline-item"><div class="timeline-time">14:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🕌 ชม Songzanlin Monastery (ไม่เดินเร็ว)<br><span class="tl-note">วัดทิเบตที่ใหญ่ที่สุดในยูนนาน · เข้าฟรี + ค่าเข้า 115¥</span></p></div></div>
-          <div class="timeline-item"><div class="timeline-time">14:30</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>🏨 Check-in: Shangri-La Anyu Garden Boutique Guesthouse<br><span class="tl-note">Dukezong Ancient Town · Leboduolang, No. 65, Jinlong Street, Jiantang Town</span></p></div></div>
-          <div class="timeline-item"><div class="timeline-time">17:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🌅 ชม Turtle Hill (Guishan) · จุดชมวิว<br><span class="tl-note">เดินช้าๆ ขึ้นเขา · หยุดพักบ่อยๆ</span></p></div></div>
-          <div class="timeline-item"><div class="timeline-time">19:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🍷 อาหารเย็นเบาๆ + พักผ่อน</p></div></div>
+          <div class="timeline-item"><div class="timeline-time">05:00</div><div class="timeline-dot warn"></div><div class="timeline-body warn"><p>⏰ ตื่น · เก็บกระเป๋า · Check-out Kunming</p></div></div>
+          <div class="timeline-item"><div class="timeline-time">เช้า</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>✈️ บิน KMG → DIG (Shangri-La Airport)<br><span class="tl-note">~1 ชม. · เช็คเวลาจริงกับตั๋ว</span></p></div></div>
+          <div class="timeline-item"><div class="timeline-time">09:00+</div><div class="timeline-dot"></div><div class="timeline-body"><p>🛬 ถึง DIG · แท็กซี่/รถรับ → เมือง<br><span class="tl-note">DiDi จาก DIG เข้าตัวเมือง ~50¥</span></p></div></div>
+          <div class="timeline-item"><div class="timeline-time">10:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>🚶 เดินชม Dukezong Ancient Town เบาๆ<br><span class="tl-note">ไม่รีบ · หายใจลึกๆ · ร่างกายปรับตัว</span></p></div></div>
+          <div class="timeline-item"><div class="timeline-time">12:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🍜 อาหารกลางวัน · อาหารทิเบต<br><span class="tl-note">Tsampa · Butter Tea · Yak Meat</span></p></div></div>
+          <div class="timeline-item"><div class="timeline-time">14:00</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>🏨 Check-in: Shangri-La Anyu Garden Boutique Guesthouse<br><span class="tl-note">Dukezong Ancient Town · Leboduolang, No. 65, Jinlong Street, Jiantang Town</span></p></div></div>
+          <div class="timeline-item"><div class="timeline-time">15:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🕌 ชม Songzanlin Monastery (เดินช้าๆ)<br><span class="tl-note">วัดทิเบตใหญ่ที่สุดในยูนนาน · ค่าเข้า 115¥</span></p></div></div>
+          <div class="timeline-item"><div class="timeline-time">17:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>🌅 ชม Guishan Hill (Turtle Hill) · จุดชมวิว<br><span class="tl-note">เดินช้าๆ · หยุดพักบ่อยๆ</span></p></div></div>
+          <div class="timeline-item"><div class="timeline-time">19:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>🍷 อาหารเย็นเบาๆ</p></div></div>
           <div class="timeline-item"><div class="timeline-time">21:30</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>💤 นอนเร็ว! พรุ่งนี้ขึ้นเขา 4,220 ม.</p></div></div>
         </div>
 
-        <p class="section-header">🍽️ อาหารทิเบตลอง</p>
+        <p class="section-header">🍽️ ลองอาหารทิเบต</p>
         <div class="restaurant">
           <div class="restaurant-emoji">🧈</div>
           <div class="restaurant-body">
             <div class="r-name">Butter Tea (ชาเนย)</div>
-            <div class="r-cn">酥油茶 (Sūyóu chá)</div>
+            <div class="r-cn">酥油茶 · Sūyóu chá</div>
             <div class="r-detail">ชาผสมเนยจามรี · เค็มเล็กน้อย · ช่วย altitude sickness</div>
             <div class="r-price">~10-20¥</div>
           </div>
@@ -989,7 +542,7 @@
         <div class="restaurant">
           <div class="restaurant-emoji">🥩</div>
           <div class="restaurant-body">
-            <div class="r-name">Yak Meat ย่าง / ตุ๋น</div>
+            <div class="r-name">Yak Meat ย่าง/ตุ๋น</div>
             <div class="r-cn">牦牛肉</div>
             <div class="r-detail">เนื้อจามรีท้องถิ่น · โปรตีนสูง · กินแล้วอบอุ่น</div>
             <div class="r-price">~60-100¥</div>
@@ -998,11 +551,11 @@
       </div>
     </div>
 
-    <!-- ════════════════ DAY 2 ════════════════ -->
+    <!-- DAY 2 -->
     <div class="day-page" id="day-2">
       <div class="content">
         <div class="day-hero hero-orange" style="--hero-emoji:'🦅'">
-          <div class="day-hero-badge">DAY 2 · 26 JUL 2026 · HIGH RISK</div>
+          <div class="day-hero-badge">DAY 2 · 26 JUL 2026 · HIGH RISK DAY</div>
           <h2>Abujicuo Trail<br>4,220 ม. — วันที่ท้าทายที่สุด!</h2>
           <div class="day-hero-meta">
             <span class="meta-chip">⛰️ 4,220 ม.</span>
@@ -1015,7 +568,7 @@
           <div class="alert-icon">🚨</div>
           <div class="alert-body">
             <div class="alert-title">STOP CONDITIONS — หยุดทันที + ลงเขา</div>
-            ปวดหัวรุนแรง ไม่หายหลังพัก 30 นาที · เดินเซ / ทรงตัวไม่ได้ · หายใจลำบากมาก · อาเจียนต่อเนื่อง · ริมฝีปากเขียว
+            ปวดหัวรุนแรง ไม่หายหลังพัก 30 นาที · เดินเซ/ทรงตัวไม่ได้ · หายใจลำบากมาก · อาเจียนต่อเนื่อง · ริมฝีปากเขียว
           </div>
         </div>
 
@@ -1023,7 +576,7 @@
           <div class="alert-icon">📍</div>
           <div class="alert-body">
             <div class="alert-title">จุดนัด — East Gate ประตูทิศตะวันออก</div>
-            ออกจาก Anyu Guesthouse เดินไปที่ <strong>ประตูทิศตะวันออก (East Gate)</strong> เพื่อขึ้นรถทัวร์ · เผื่อเวลา ~10-15 นาที
+            ออกจาก Anyu Guesthouse เดินไปที่ <strong>ประตูทิศตะวันออก (East Gate)</strong> เพื่อขึ้นรถทัวร์ · เผื่อเวลาเดิน ~10-15 นาที
           </div>
         </div>
 
@@ -1035,10 +588,10 @@
           <div class="timeline-item"><div class="timeline-time">07:30</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🚶 เดินไปขึ้นรถทัวร์ที่ <strong>ประตูทิศตะวันออก (East Gate)</strong><br><span class="tl-note">Abujicuo Trail · เผื่อเวลาเดินจาก Anyu Guesthouse ~10-15 นาที</span></p></div></div>
           <div class="timeline-item"><div class="timeline-time">07:30–09:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🚐 ขับรถ 1.5 ชม. → Niguge trailhead (3,600 ม.)</p></div></div>
           <div class="timeline-item"><div class="timeline-time">09:00</div><div class="timeline-dot warn"></div><div class="timeline-body warn"><p>🥾 เริ่มเดินขึ้น — Rule: "30 ก้าว → หยุดหายใจ 30 วิ"</p></div></div>
-          <div class="timeline-item"><div class="timeline-time">11:30–12:00</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🌊 ถึง Abujicuo Lake (4,220 ม.)! 🎉<br><span class="tl-note">ถ่ายรูป กินข้าว พักสั้นๆ อย่าอยู่นานเกินไป</span></p></div></div>
+          <div class="timeline-item"><div class="timeline-time">11:30–12:00</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🌊 ถึง Abujicuo Lake (4,220 ม.)! 🎉<br><span class="tl-note">ถ่ายรูป · กินข้าว · พักสั้นๆ · อย่าอยู่นานเกินไป</span></p></div></div>
           <div class="timeline-item"><div class="timeline-time">13:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>⬇️ เริ่มเดินลง (เร็วกว่าขึ้น ~1.5 ชม.)</p></div></div>
           <div class="timeline-item"><div class="timeline-time">15:00–16:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>🚐 ขับกลับ Shangri-La</p></div></div>
-          <div class="timeline-item"><div class="timeline-time">17:00</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>🏨 ถึงโรงแรม อาบน้ำอุ่น นอนพัก</p></div></div>
+          <div class="timeline-item"><div class="timeline-time">17:00</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>🏨 ถึง Anyu Guesthouse · อาบน้ำอุ่น · นอนพัก</p></div></div>
           <div class="timeline-item"><div class="timeline-time">20:30</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>💤 เข้านอนเร็ว</p></div></div>
         </div>
 
@@ -1051,7 +604,7 @@
           <div class="gear-item" onclick="toggleGear(this)"><span>🧴 ครีมกันแดด SPF50+</span></div>
           <div class="gear-item" onclick="toggleGear(this)"><span>🥜 ขนมพลังงาน</span></div>
           <div class="gear-item" onclick="toggleGear(this)"><span>💊 Diamox + ยาปวดหัว</span></div>
-          <div class="gear-item" onclick="toggleGear(this)"><span>🧤 ถุงมือ (อาจหนาว)</span></div>
+          <div class="gear-item" onclick="toggleGear(this)"><span>🧤 ถุงมือ</span></div>
           <div class="gear-item" onclick="toggleGear(this)"><span>📱 โทรศัพท์ชาร์จ 100%</span></div>
           <div class="gear-item" onclick="toggleGear(this)"><span>🔦 Power bank</span></div>
         </div>
@@ -1077,33 +630,33 @@
       </div>
     </div>
 
-    <!-- ════════════════ DAY 3 ════════════════ -->
+    <!-- DAY 3 -->
     <div class="day-page" id="day-3">
       <div class="content">
         <div class="day-hero hero-purple" style="--hero-emoji:'🏯'">
-          <div class="day-hero-badge">DAY 3 · 27 JUL 2026</div>
-          <h2>Shangri-La → Lijiang<br>เมืองมรดกโลก!</h2>
+          <div class="day-hero-badge">DAY 3 · 27 JUL 2026 · SUNDAY</div>
+          <h2>Shangri-La → Lijiang<br>เมืองมรดกโลก UNESCO</h2>
           <div class="day-hero-meta">
-            <span class="meta-chip">🚌 4-5 ชม.</span>
+            <span class="meta-chip">🚌 ~4-5 ชม.</span>
             <span class="meta-chip">🏯 Old Town</span>
-            <span class="meta-chip">📸 UNESCO</span>
+            <span class="meta-chip">📸 UNESCO Site</span>
           </div>
         </div>
 
         <div class="alert alert-green">
           <div class="alert-icon">✅</div>
           <div class="alert-body">
-            <div class="alert-title">ลงระดับความสูง — ดีขึ้น!</div>
-            Lijiang อยู่ที่ 2,400 ม. (ต่ำกว่า Shangri-La 800 ม.) · อาการ altitude sickness ควรดีขึ้นมาก · เดินได้เยอะขึ้น
+            <div class="alert-title">ลงระดับความสูง — ร่างกายดีขึ้น!</div>
+            Lijiang 2,400 ม. (ต่ำกว่า Shangri-La 800 ม.) · อาการ altitude sickness ควรดีขึ้นมาก · เดินได้เยอะขึ้น
           </div>
         </div>
 
         <p class="section-header">Timeline วันนี้</p>
         <div class="timeline">
           <div class="timeline-item"><div class="timeline-time">08:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>📦 Pack + Check-out · ฝากกระเป๋าที่โรงแรม</p></div></div>
-          <div class="timeline-item"><div class="timeline-time">09:00</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🚌 รถทัวร์/รถเช่า: Shangri-La → Lijiang<br><span class="tl-note">~4-5 ชม. · ทางหลวงสาย G214 · วิวสวยมาก</span></p></div></div>
+          <div class="timeline-item"><div class="timeline-time">09:00</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🚌 รถทัวร์: Shangri-La → Lijiang<br><span class="tl-note">~4-5 ชม. · ทางหลวง G214 · วิวสวยมาก · ~60-100¥</span></p></div></div>
           <div class="timeline-item"><div class="timeline-time">13:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>🍜 กินข้าวกลางวันระหว่างทาง หรือถึง Lijiang</p></div></div>
-          <div class="timeline-item"><div class="timeline-time">14:30</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>🏨 Check-in: Feng Qingcheng Inn (Dashi Che Hotel)<br><span class="tl-note">ใน Old Town หรือใกล้ๆ</span></p></div></div>
+          <div class="timeline-item"><div class="timeline-time">14:30</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>🏨 Check-in: Feng Qingcheng Inn (Dashi Che Hotel)<br><span class="tl-note">ใน Old Town หรือใกล้ๆ Lijiang</span></p></div></div>
           <div class="timeline-item"><div class="timeline-time">16:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🚶 เดินชม Lijiang Old Town (Dayan)<br><span class="tl-note">คลอง · สะพานโบราณ · ร้านค้าน่ารัก</span></p></div></div>
           <div class="timeline-item"><div class="timeline-time">18:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🌆 ชม Wanggu Tower ตอนพระอาทิตย์ตก</p></div></div>
           <div class="timeline-item"><div class="timeline-time">19:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>🎵 Sifang Street ยามค่ำ · บรรยากาศดีมาก</p></div></div>
@@ -1123,16 +676,16 @@
         <div class="restaurant">
           <div class="restaurant-emoji">🌺</div>
           <div class="restaurant-body">
-            <div class="r-name">ข้าวผัดดอกไม้ยูนนาน</div>
+            <div class="r-name">ดอกไม้ยูนนาน · Yunnan Flower Food</div>
             <div class="r-cn">鲜花饼 · 云南花食</div>
-            <div class="r-detail">อาหาร signature ของ Lijiang · ดอกกุหลาบ + ลาเวนเดอร์ใส่ในอาหาร</div>
+            <div class="r-detail">อาหาร signature ของ Lijiang · ดอกกุหลาบ + ลาเวนเดอร์ในอาหาร</div>
             <div class="r-price">~40-80¥/คน</div>
           </div>
         </div>
         <div class="restaurant">
           <div class="restaurant-emoji">🍛</div>
           <div class="restaurant-body">
-            <div class="r-name">Naxi Cuisine ร้านพื้นเมือง</div>
+            <div class="r-name">Naxi Cuisine อาหารพื้นเมือง</div>
             <div class="r-cn">纳西族美食</div>
             <div class="r-detail">อาหารชนเผ่า Naxi · หม้อไฟ · ผักดอง · ไก่ย่าง</div>
             <div class="r-price">~50-90¥/คน</div>
@@ -1141,15 +694,15 @@
       </div>
     </div>
 
-    <!-- ════════════════ DAY 4 ════════════════ -->
+    <!-- DAY 4 -->
     <div class="day-page" id="day-4">
       <div class="content">
         <div class="day-hero hero-green" style="--hero-emoji:'🏔️'">
-          <div class="day-hero-badge">DAY 4 · 28 JUL 2026 · JADE SNOW</div>
+          <div class="day-hero-badge">DAY 4 · 28 JUL 2026 · JADE SNOW MTN</div>
           <h2>Jade Dragon Snow Mtn<br>หิมะนิรันดร์ 5,596 ม.</h2>
           <div class="day-hero-meta">
             <span class="meta-chip">🏔️ 4,506 ม. (กระเช้า)</span>
-            <span class="meta-chip">❄️ หนาว 5°C</span>
+            <span class="meta-chip">❄️ ~5°C</span>
             <span class="meta-chip">🎭 Impression Show</span>
           </div>
         </div>
@@ -1158,19 +711,19 @@
           <div class="alert-icon">🧊</div>
           <div class="alert-body">
             <div class="alert-title">เตรียมเสื้อหนาว! จุดสูงสุดที่ขึ้นได้ 4,506 ม.</div>
-            เช่าเสื้อกันหนาวที่ฐานกระเช้า ~30¥ · ออกซิเจนกระป๋องซื้อที่นั่น ~30¥ · ค่ากระเช้า Glacier Park ~230¥ + ค่าเข้า 115¥
+            เช่าเสื้อกันหนายที่ฐานกระเช้า ~30¥ · ออกซิเจนกระป๋อง ~30¥ · กระเช้า Glacier Park ~230¥ + ค่าเข้า 115¥
           </div>
         </div>
 
         <p class="section-header">Timeline วันนี้</p>
         <div class="timeline">
-          <div class="timeline-item"><div class="timeline-time">07:30</div><div class="timeline-dot warn"></div><div class="timeline-body warn"><p>🎫 ไปซื้อตั๋วกระเช้าแต่เช้า (จำกัดจำนวน)<br><span class="tl-note">ตั๋วอาจหมดเร็ว โดยเฉพาะช่วง High Season</span></p></div></div>
+          <div class="timeline-item"><div class="timeline-time">07:30</div><div class="timeline-dot warn"></div><div class="timeline-body warn"><p>🎫 ไปซื้อตั๋วกระเช้าแต่เช้า (จำกัดจำนวน!)<br><span class="tl-note">ตั๋วอาจหมดเร็ว โดยเฉพาะช่วง High Season</span></p></div></div>
           <div class="timeline-item"><div class="timeline-time">09:00</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🚡 กระเช้า Glacier Park → 4,506 ม.<br><span class="tl-note">วิวยอดเขาหิมะ Jade Dragon Snow Mountain</span></p></div></div>
-          <div class="timeline-item"><div class="timeline-time">11:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🏔️ เดินชม Glacier · ถ่ายรูป<br><span class="tl-note">อยู่ได้ 1-2 ชม. แล้วลงมา</span></p></div></div>
+          <div class="timeline-item"><div class="timeline-time">11:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🏔️ เดินชม Glacier · ถ่ายรูป (อยู่ได้ 1-2 ชม.)</p></div></div>
           <div class="timeline-item"><div class="timeline-time">13:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🍜 กินข้าวที่ Baisha Village</p></div></div>
-          <div class="timeline-item"><div class="timeline-time">15:00</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🎭 Impression Lijiang Show (ถ้าจองไว้)<br><span class="tl-note">Show กลางแจ้งที่ใหญ่ที่สุดในโลก · กำกับโดย Zhang Yimou · ~190¥</span></p></div></div>
+          <div class="timeline-item"><div class="timeline-time">15:00</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🎭 Impression Lijiang Show<br><span class="tl-note">กลางแจ้งที่ใหญ่ที่สุดในโลก · กำกับโดย Zhang Yimou · ~190¥</span></p></div></div>
           <div class="timeline-item"><div class="timeline-time">18:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🛍️ Shopping ใน Old Town · ของฝากยูนนาน</p></div></div>
-          <div class="timeline-item"><div class="timeline-time">20:00</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>🍷 อาหารเย็น + บาร์ใน Sifang Street</p></div></div>
+          <div class="timeline-item"><div class="timeline-time">20:00</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>🍷 อาหารเย็น + Sifang Street ยามค่ำ</p></div></div>
         </div>
 
         <p class="section-header">🚡 เปรียบเทียบกระเช้า</p>
@@ -1198,11 +751,11 @@
       </div>
     </div>
 
-    <!-- ════════════════ DAY 5 ════════════════ -->
+    <!-- DAY 5 -->
     <div class="day-page" id="day-5">
       <div class="content">
         <div class="day-hero hero-blue" style="--hero-emoji:'✈️'">
-          <div class="day-hero-badge">DAY 5 · 29 JUL 2026</div>
+          <div class="day-hero-badge">DAY 5 · 29 JUL 2026 · TUESDAY</div>
           <h2>Lijiang → BKK<br>กลับบ้านพร้อมความทรงจำ</h2>
           <div class="day-hero-meta">
             <span class="meta-chip">✈️ LJG→BKK</span>
@@ -1214,27 +767,27 @@
         <div class="alert alert-blue">
           <div class="alert-icon">⏰</div>
           <div class="alert-body">
-            <div class="alert-title">เช็ค Check-in Time และระยะทางไปสนามบิน</div>
-            สนามบิน Lijiang (LJG) อยู่นอกเมือง ~25 กม. · DiDi ราคา ~80-100¥ · เผื่อเวลา 2.5 ชม.ก่อนเครื่องออก
+            <div class="alert-title">สนามบิน Lijiang (LJG) อยู่นอกเมือง ~25 กม.</div>
+            DiDi ~80-100¥ · เผื่อเวลา 2.5 ชม.ก่อนเครื่องออก
           </div>
         </div>
 
         <p class="section-header">Timeline วันสุดท้าย</p>
         <div class="timeline">
-          <div class="timeline-item"><div class="timeline-time">07:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>☕ อาหารเช้า · กาแฟยูนนาน<br><span class="tl-note">Yunnan Coffee ขึ้นชื่อ · ลองก่อนกลับ!</span></p></div></div>
-          <div class="timeline-item"><div class="timeline-time">08:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>🛍️ ซื้อของฝากนาทีสุดท้าย<br><span class="tl-note">ชายูนนาน · ดอกไม้อบแห้ง · ขนมพื้นเมือง</span></p></div></div>
-          <div class="timeline-item"><div class="timeline-time">09:30</div><div class="timeline-dot warn"></div><div class="timeline-body warn"><p>📦 Check-out โรงแรม · เก็บกระเป๋าให้ครบ</p></div></div>
-          <div class="timeline-item"><div class="timeline-time">10:30</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🚕 DiDi/แท็กซี่ → Lijiang Airport (LJG)<br><span class="tl-note">~30-40 นาที · จองล่วงหน้าหรือโบก DiDi</span></p></div></div>
-          <div class="timeline-item"><div class="timeline-time">13:00</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>✈️ เที่ยวบินกลับ LJG → BKK<br><span class="tl-note">เช็คเวลาจริงกับตั๋ว</span></p></div></div>
-          <div class="timeline-item"><div class="timeline-time">18:00+</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>🏠 ถึงบ้านปลอดภัย! 🎉<br><span class="tl-note">อย่าลืมแกะสินค้าที่ฝากไว้ในกระเป๋าออก!</span></p></div></div>
+          <div class="timeline-item"><div class="timeline-time">07:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>☕ อาหารเช้า · กาแฟยูนนาน<br><span class="tl-note">Yunnan Coffee ขึ้นชื่อมาก!</span></p></div></div>
+          <div class="timeline-item"><div class="timeline-time">08:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>🛍️ ซื้อของฝากนาทีสุดท้าย<br><span class="tl-note">ชายูนนาน · ดอกไม้อบแห้ง · ขนม Xian Hua Bing</span></p></div></div>
+          <div class="timeline-item"><div class="timeline-time">09:30</div><div class="timeline-dot warn"></div><div class="timeline-body warn"><p>📦 Check-out · เก็บกระเป๋าให้ครบ</p></div></div>
+          <div class="timeline-item"><div class="timeline-time">10:30</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🚕 DiDi → Lijiang Airport (LJG)<br><span class="tl-note">~30-40 นาที</span></p></div></div>
+          <div class="timeline-item"><div class="timeline-time">บ่าย</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>✈️ เที่ยวบิน LJG → BKK<br><span class="tl-note">เช็คเวลาจริงกับตั๋ว</span></p></div></div>
+          <div class="timeline-item"><div class="timeline-time">ค่ำ</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>🏠 ถึงบ้านปลอดภัย! 🎉</p></div></div>
         </div>
 
         <p class="section-header">🛍️ ของฝากต้องซื้อ</p>
         <div class="info-grid">
-          <div class="info-card"><div class="ic-label">ชา</div><div class="ic-value">Pu-erh Tea · ชาดอกไม้</div><div class="ic-sub">Yunnan ขึ้นชื่อเรื่องชา · ซื้อแบบกดอัด</div></div>
+          <div class="info-card"><div class="ic-label">ชา</div><div class="ic-value">Pu-erh Tea</div><div class="ic-sub">Yunnan ขึ้นชื่อเรื่องชา · ซื้อแบบกดอัด</div></div>
           <div class="info-card"><div class="ic-label">ขนม</div><div class="ic-value">鲜花饼 Xian Hua Bing</div><div class="ic-sub">ขนมดอกไม้ยูนนาน · หวานกำลังดี</div></div>
-          <div class="info-card"><div class="ic-label">เครื่องเงิน</div><div class="ic-value">Silver Jewelry Naxi</div><div class="ic-sub">งานฝีมือชนเผ่า Naxi · ราคาต่อรองได้</div></div>
-          <div class="info-card"><div class="ic-label">กาแฟ</div><div class="ic-value">Yunnan Coffee</div><div class="ic-sub">กาแฟ Arabica ยูนนาน · หอมมาก</div></div>
+          <div class="info-card"><div class="ic-label">เครื่องเงิน</div><div class="ic-value">Silver Jewelry Naxi</div><div class="ic-sub">งานฝีมือชนเผ่า Naxi · ต่อรองได้</div></div>
+          <div class="info-card"><div class="ic-label">กาแฟ</div><div class="ic-value">Yunnan Coffee</div><div class="ic-sub">Arabica ยูนนาน · หอมมาก</div></div>
         </div>
       </div>
     </div>
@@ -1268,7 +821,7 @@
 
       <p class="section-header">🎒 สิ่งของสำคัญ</p>
       <div class="checklist-item" onclick="toggleCheck(this)" data-id="pack-1"><div class="check-box">✓</div><div class="check-text">Diamox (Acetazolamide) 250mg<div class="check-sub">ใบสั่งแพทย์ · กิน 1 วันก่อนขึ้นที่สูง</div></div></div>
-      <div class="checklist-item" onclick="toggleCheck(this)" data-id="pack-2"><div class="check-box">✓</div><div class="check-text">รองเท้า Hiking กันลื่น<div class="check-sub">ทดลองใส่ก่อน อย่าใส่คู่ใหม่</div></div></div>
+      <div class="checklist-item" onclick="toggleCheck(this)" data-id="pack-2"><div class="check-box">✓</div><div class="check-text">รองเท้า Hiking กันลื่น<div class="check-sub">ทดลองใส่ก่อน · อย่าใส่คู่ใหม่</div></div></div>
       <div class="checklist-item" onclick="toggleCheck(this)" data-id="pack-3"><div class="check-box">✓</div><div class="check-text">เสื้อกันลม + ถุงมือ<div class="check-sub">บน Jade Dragon ลมแรง หนาวมาก</div></div></div>
       <div class="checklist-item" onclick="toggleCheck(this)" data-id="pack-4"><div class="check-box">✓</div><div class="check-text">ครีมกันแดด SPF50+<div class="check-sub">UV แรงมากในที่สูง</div></div></div>
       <div class="checklist-item" onclick="toggleCheck(this)" data-id="pack-5"><div class="check-box">✓</div><div class="check-text">กล้องถ่ายรูป + Memory Card<div class="check-sub">วิวสวยมาก ต้องเตรียมพื้นที่</div></div></div>
@@ -1286,67 +839,34 @@
     <div class="content">
       <div class="altitude-section">
         <div class="alt-title">📊 ระดับความสูงตลอดทริป</div>
-        <div class="alt-row">
-          <div class="alt-label">Bangkok</div>
-          <div class="alt-bar-wrap"><div class="alt-bar" style="width:2%;background:#10b981"></div></div>
-          <div class="alt-value" style="color:#10b981">10 ม.</div>
-        </div>
-        <div class="alt-row">
-          <div class="alt-label">Kunming</div>
-          <div class="alt-bar-wrap"><div class="alt-bar" style="width:42%;background:#0ea5e9"></div></div>
-          <div class="alt-value" style="color:#0ea5e9">1,900 ม.</div>
-        </div>
-        <div class="alt-row">
-          <div class="alt-label">Shangri-La</div>
-          <div class="alt-bar-wrap"><div class="alt-bar" style="width:70%;background:#f97316"></div></div>
-          <div class="alt-value" style="color:#f97316">3,200 ม.</div>
-        </div>
-        <div class="alt-row">
-          <div class="alt-label">Abujicuo</div>
-          <div class="alt-bar-wrap"><div class="alt-bar" style="width:93%;background:#ef4444"></div></div>
-          <div class="alt-value" style="color:#ef4444">4,220 ม.</div>
-        </div>
-        <div class="alt-row">
-          <div class="alt-label">Jade Dragon</div>
-          <div class="alt-bar-wrap"><div class="alt-bar" style="width:100%;background:#8b5cf6"></div></div>
-          <div class="alt-value" style="color:#8b5cf6">4,506 ม.</div>
-        </div>
-        <div class="alt-row">
-          <div class="alt-label">Lijiang</div>
-          <div class="alt-bar-wrap"><div class="alt-bar" style="width:53%;background:#0ea5e9"></div></div>
-          <div class="alt-value" style="color:#0ea5e9">2,400 ม.</div>
-        </div>
+        <div class="alt-row"><div class="alt-label">Bangkok</div><div class="alt-bar-wrap"><div class="alt-bar" style="width:2%;background:#10b981"></div></div><div class="alt-value" style="color:#10b981">10 ม.</div></div>
+        <div class="alt-row"><div class="alt-label">Kunming</div><div class="alt-bar-wrap"><div class="alt-bar" style="width:42%;background:#0ea5e9"></div></div><div class="alt-value" style="color:#0ea5e9">1,900 ม.</div></div>
+        <div class="alt-row"><div class="alt-label">Shangri-La</div><div class="alt-bar-wrap"><div class="alt-bar" style="width:70%;background:#f97316"></div></div><div class="alt-value" style="color:#f97316">3,200 ม.</div></div>
+        <div class="alt-row"><div class="alt-label">Abujicuo</div><div class="alt-bar-wrap"><div class="alt-bar" style="width:93%;background:#ef4444"></div></div><div class="alt-value" style="color:#ef4444">4,220 ม.</div></div>
+        <div class="alt-row"><div class="alt-label">Jade Dragon</div><div class="alt-bar-wrap"><div class="alt-bar" style="width:100%;background:#8b5cf6"></div></div><div class="alt-value" style="color:#8b5cf6">4,506 ม.</div></div>
+        <div class="alt-row"><div class="alt-label">Lijiang</div><div class="alt-bar-wrap"><div class="alt-bar" style="width:53%;background:#0ea5e9"></div></div><div class="alt-value" style="color:#0ea5e9">2,400 ม.</div></div>
       </div>
 
       <p class="section-header">🩺 Altitude Sickness Guide</p>
 
       <div class="alert alert-green">
         <div class="alert-icon">✅</div>
-        <div class="alert-body">
-          <div class="alert-title">อาการเบา — ปกติ ไม่ต้องกลัว</div>
-          ปวดหัวเล็กน้อย · เหนื่อยง่าย · นอนไม่หลับ · เวียนหัวเล็กน้อย → พัก ดื่มน้ำ รอให้ร่างกายปรับตัว
-        </div>
+        <div class="alert-body"><div class="alert-title">อาการเบา — ปกติ ไม่ต้องกลัว</div>ปวดหัวเล็กน้อย · เหนื่อยง่าย · นอนไม่หลับ · เวียนหัวเล็กน้อย → พัก ดื่มน้ำ รอให้ร่างกายปรับตัว</div>
       </div>
 
       <div class="alert alert-orange">
         <div class="alert-icon">⚠️</div>
-        <div class="alert-body">
-          <div class="alert-title">อาการปานกลาง — ระวัง</div>
-          ปวดหัวมาก · คลื่นไส้ · หายใจลำบาก · เดินเซ → กิน Diamox · พักมากขึ้น · พิจารณาลงระดับต่ำกว่า
-        </div>
+        <div class="alert-body"><div class="alert-title">อาการปานกลาง — ระวัง</div>ปวดหัวมาก · คลื่นไส้ · หายใจลำบาก · เดินเซ → กิน Diamox · พักมากขึ้น · พิจารณาลงต่ำกว่า</div>
       </div>
 
       <div class="alert alert-red">
         <div class="alert-icon">🚨</div>
-        <div class="alert-body">
-          <div class="alert-title">อาการรุนแรง — ลงทันที!</div>
-          HAPE (ปอดบวมน้ำ): หายใจลำบาก ไอ มีฟอง · HACE (สมองบวม): เดินเซ สับสน หมดสติ → ลงไปที่ต่ำทันที + โทรฉุกเฉิน
-        </div>
+        <div class="alert-body"><div class="alert-title">อาการรุนแรง — ลงทันที!</div>HAPE: หายใจลำบาก ไอ มีฟอง · HACE: เดินเซ สับสน หมดสติ → ลงไปที่ต่ำทันที + โทรฉุกเฉิน 120</div>
       </div>
 
       <p class="section-header">💊 ยาและมาตรการป้องกัน</p>
       <div class="info-grid">
-        <div class="info-card"><div class="ic-label">Diamox</div><div class="ic-value">250mg x 2/วัน</div><div class="ic-sub">เริ่มกิน 1 วันก่อนขึ้น · ต้องมีใบสั่งแพทย์</div></div>
+        <div class="info-card"><div class="ic-label">Diamox</div><div class="ic-value">250mg × 2/วัน</div><div class="ic-sub">เริ่มกิน 1 วันก่อนขึ้น · ต้องมีใบสั่งแพทย์</div></div>
         <div class="info-card"><div class="ic-label">ดื่มน้ำ</div><div class="ic-value">3+ ลิตร/วัน</div><div class="ic-sub">ดื่มมากกว่าปกติ · หลีกเลี่ยงแอลกอฮอล์</div></div>
         <div class="info-card"><div class="ic-label">ออกซิเจน</div><div class="ic-value">ซื้อที่นั่น</div><div class="ic-sub">~30¥/กระป๋อง · มีขายที่ Jade Dragon</div></div>
         <div class="info-card"><div class="ic-label">พักผ่อน</div><div class="ic-value">วันแรกสำคัญ</div><div class="ic-sub">ห้ามออกกำลังหนัก 24 ชม.แรก</div></div>
@@ -1355,22 +875,10 @@
       <p class="section-header">🏥 เบอร์ฉุกเฉิน</p>
       <div class="emergency-card">
         <div class="ec-title">Emergency Numbers China</div>
-        <div class="emergency-num">
-          <div class="en-label">🚑 Ambulance</div>
-          <div class="en-num">120</div>
-        </div>
-        <div class="emergency-num">
-          <div class="en-label">🚓 Police</div>
-          <div class="en-num">110</div>
-        </div>
-        <div class="emergency-num">
-          <div class="en-label">🔥 Fire</div>
-          <div class="en-num">119</div>
-        </div>
-        <div class="emergency-num">
-          <div class="en-label">🇹🇭 สถานทูตไทย</div>
-          <div class="en-num">010-6532-1749</div>
-        </div>
+        <div class="emergency-num"><div class="en-label">🚑 Ambulance</div><div class="en-num">120</div></div>
+        <div class="emergency-num"><div class="en-label">🚓 Police</div><div class="en-num">110</div></div>
+        <div class="emergency-num"><div class="en-label">🔥 Fire</div><div class="en-num">119</div></div>
+        <div class="emergency-num"><div class="en-label">🇹🇭 สถานทูตไทย</div><div class="en-num">010-6532-1749</div></div>
       </div>
 
       <p class="section-header">💳 เงินและการชำระเงิน</p>
@@ -1390,110 +898,29 @@
     <div class="content">
       <div class="alert alert-blue">
         <div class="alert-icon">💡</div>
-        <div class="alert-body">
-          <div class="alert-title">Tips: พูดจีนที่ Shangri-La / Lijiang</div>
-          คนท้องถิ่นพูดภาษาจีนกลาง (Mandarin) ได้ · แต่เขาจะ appreciate มากถ้าเราพยายามพูดภาษาจีน!
-        </div>
+        <div class="alert-body"><div class="alert-title">Tips: พูดจีนที่ Shangri-La / Lijiang</div>คนท้องถิ่นพูด Mandarin ได้ · เขาจะ appreciate มากถ้าเราพยายามพูดภาษาจีน!</div>
       </div>
 
       <p class="section-header">🚨 ฉุกเฉิน</p>
-      <div class="phrase-card">
-        <div class="ph-en">Help! / ช่วยด้วย!</div>
-        <div>
-          <div class="ph-cn">救命！</div>
-          <div class="ph-py">Jiùmìng!</div>
-        </div>
-      </div>
-      <div class="phrase-card">
-        <div class="ph-en">Call ambulance / โทรเรียกรถพยาบาล</div>
-        <div>
-          <div class="ph-cn">叫救护车</div>
-          <div class="ph-py">Jiào jiùhùchē</div>
-        </div>
-      </div>
-      <div class="phrase-card">
-        <div class="ph-en">I feel sick / ฉันไม่สบาย (ความสูง)</div>
-        <div>
-          <div class="ph-cn">我高原反应</div>
-          <div class="ph-py">Wǒ gāoyuán fǎnyìng</div>
-        </div>
-      </div>
+      <div class="phrase-card"><div class="ph-en">Help! / ช่วยด้วย!</div><div><div class="ph-cn">救命！</div><div class="ph-py">Jiùmìng!</div></div></div>
+      <div class="phrase-card"><div class="ph-en">Call ambulance / โทรรถพยาบาล</div><div><div class="ph-cn">叫救护车</div><div class="ph-py">Jiào jiùhùchē</div></div></div>
+      <div class="phrase-card"><div class="ph-en">I have altitude sickness / ฉันเป็น altitude</div><div><div class="ph-cn">我高原反应</div><div class="ph-py">Wǒ gāoyuán fǎnyìng</div></div></div>
 
       <p class="section-header">🏨 ที่พัก</p>
-      <div class="phrase-card">
-        <div class="ph-en">I have a reservation</div>
-        <div>
-          <div class="ph-cn">我有预订</div>
-          <div class="ph-py">Wǒ yǒu yùdìng</div>
-        </div>
-      </div>
-      <div class="phrase-card">
-        <div class="ph-en">Where is the hotel?</div>
-        <div>
-          <div class="ph-cn">酒店在哪里？</div>
-          <div class="ph-py">Jiǔdiàn zài nǎlǐ?</div>
-        </div>
-      </div>
+      <div class="phrase-card"><div class="ph-en">I have a reservation</div><div><div class="ph-cn">我有预订</div><div class="ph-py">Wǒ yǒu yùdìng</div></div></div>
+      <div class="phrase-card"><div class="ph-en">Where is the hotel?</div><div><div class="ph-cn">酒店在哪里？</div><div class="ph-py">Jiǔdiàn zài nǎlǐ?</div></div></div>
 
       <p class="section-header">🍜 อาหาร</p>
-      <div class="phrase-card">
-        <div class="ph-en">Not spicy please / ไม่เผ็ด</div>
-        <div>
-          <div class="ph-cn">不辣，谢谢</div>
-          <div class="ph-py">Bù là, xièxiè</div>
-        </div>
-      </div>
-      <div class="phrase-card">
-        <div class="ph-en">Delicious! / อร่อยมาก!</div>
-        <div>
-          <div class="ph-cn">太好吃了！</div>
-          <div class="ph-py">Tài hǎochī le!</div>
-        </div>
-      </div>
-      <div class="phrase-card">
-        <div class="ph-en">Bill please / เช็คบิล</div>
-        <div>
-          <div class="ph-cn">买单</div>
-          <div class="ph-py">Mǎidān</div>
-        </div>
-      </div>
+      <div class="phrase-card"><div class="ph-en">Not spicy please / ไม่เผ็ด</div><div><div class="ph-cn">不辣，谢谢</div><div class="ph-py">Bù là, xièxiè</div></div></div>
+      <div class="phrase-card"><div class="ph-en">Delicious! / อร่อยมาก!</div><div><div class="ph-cn">太好吃了！</div><div class="ph-py">Tài hǎochī le!</div></div></div>
+      <div class="phrase-card"><div class="ph-en">Bill please / เช็คบิล</div><div><div class="ph-cn">买单</div><div class="ph-py">Mǎidān</div></div></div>
 
-      <p class="section-header">🗺️ เดินทาง</p>
-      <div class="phrase-card">
-        <div class="ph-en">Abujicuo Lake / ทะเลสาบ</div>
-        <div>
-          <div class="ph-cn">属都湖</div>
-          <div class="ph-py">Shǔdū Hú</div>
-        </div>
-      </div>
-      <div class="phrase-card">
-        <div class="ph-en">Jade Dragon Snow Mtn</div>
-        <div>
-          <div class="ph-cn">玉龙雪山</div>
-          <div class="ph-py">Yùlóng Xuěshān</div>
-        </div>
-      </div>
-      <div class="phrase-card">
-        <div class="ph-en">How much? / ราคาเท่าไหร่?</div>
-        <div>
-          <div class="ph-cn">多少钱？</div>
-          <div class="ph-py">Duōshǎo qián?</div>
-        </div>
-      </div>
-      <div class="phrase-card">
-        <div class="ph-en">Too expensive / แพงไป</div>
-        <div>
-          <div class="ph-cn">太贵了</div>
-          <div class="ph-py">Tài guì le</div>
-        </div>
-      </div>
-      <div class="phrase-card">
-        <div class="ph-en">Thank you / ขอบคุณ</div>
-        <div>
-          <div class="ph-cn">谢谢</div>
-          <div class="ph-py">Xièxiè</div>
-        </div>
-      </div>
+      <p class="section-header">🗺️ สถานที่</p>
+      <div class="phrase-card"><div class="ph-en">Abujicuo Lake</div><div><div class="ph-cn">属都湖</div><div class="ph-py">Shǔdū Hú</div></div></div>
+      <div class="phrase-card"><div class="ph-en">Jade Dragon Snow Mountain</div><div><div class="ph-cn">玉龙雪山</div><div class="ph-py">Yùlóng Xuěshān</div></div></div>
+      <div class="phrase-card"><div class="ph-en">How much? / ราคาเท่าไหร่?</div><div><div class="ph-cn">多少钱？</div><div class="ph-py">Duōshǎo qián?</div></div></div>
+      <div class="phrase-card"><div class="ph-en">Too expensive / แพงไป</div><div><div class="ph-cn">太贵了</div><div class="ph-py">Tài guì le</div></div></div>
+      <div class="phrase-card"><div class="ph-en">Thank you / ขอบคุณ</div><div><div class="ph-cn">谢谢</div><div class="ph-py">Xièxiè</div></div></div>
     </div>
   </div>
 </div>
@@ -1503,22 +930,13 @@
   <div class="scroll-content">
     <div class="content">
       <div class="stat-row">
-        <div class="stat-card">
-          <div class="s-val" style="color:#0ea5e9">6</div>
-          <div class="s-label">วัน</div>
-        </div>
-        <div class="stat-card">
-          <div class="s-val" style="color:#f97316">5</div>
-          <div class="s-label">เมือง</div>
-        </div>
-        <div class="stat-card">
-          <div class="s-val" style="color:#10b981">3</div>
-          <div class="s-label">ไฟลท์</div>
-        </div>
+        <div class="stat-card"><div class="s-val" style="color:#0ea5e9">6</div><div class="s-label">วัน</div></div>
+        <div class="stat-card"><div class="s-val" style="color:#f97316">5</div><div class="s-label">เมือง</div></div>
+        <div class="stat-card"><div class="s-val" style="color:#10b981">3</div><div class="s-label">ไฟลท์</div></div>
       </div>
 
       <p class="section-header">✈️ ตั๋วเครื่องบิน</p>
-      <div class="budget-row"><div class="br-item">DMK → KMG (Air Asia)</div><div class="br-cny">-</div><div class="br-thb">~3,500฿</div></div>
+      <div class="budget-row"><div class="br-item">DMK → KMG (Air Asia FD566)</div><div class="br-cny">-</div><div class="br-thb">~3,500฿</div></div>
       <div class="budget-row"><div class="br-item">KMG → DIG (Shangri-La)</div><div class="br-cny">~600¥</div><div class="br-thb">~3,000฿</div></div>
       <div class="budget-row"><div class="br-item">LJG → BKK</div><div class="br-cny">-</div><div class="br-thb">~3,500฿</div></div>
 
@@ -1530,11 +948,11 @@
       <p class="section-header">🎫 ค่าเข้าสถานที่</p>
       <div class="budget-row"><div class="br-item">Songzanlin Monastery</div><div class="br-cny">115¥</div><div class="br-thb">~575฿</div></div>
       <div class="budget-row"><div class="br-item">Abujicuo Tour (Group)</div><div class="br-cny">~180¥</div><div class="br-thb">~900฿</div></div>
-      <div class="budget-row"><div class="br-item">Jade Dragon + กระเช้า</div><div class="br-cny">~345¥</div><div class="br-thb">~1,725฿</div></div>
+      <div class="budget-row"><div class="br-item">Jade Dragon + กระเช้า Glacier</div><div class="br-cny">~345¥</div><div class="br-thb">~1,725฿</div></div>
       <div class="budget-row"><div class="br-item">Impression Lijiang Show</div><div class="br-cny">~190¥</div><div class="br-thb">~950฿</div></div>
       <div class="budget-row"><div class="br-item">Lijiang Old Town Pass</div><div class="br-cny">~80¥</div><div class="br-thb">~400฿</div></div>
 
-      <p class="section-header">🍜 อาหาร (รวม 6 วัน)</p>
+      <p class="section-header">🍜 อาหาร (6 วัน)</p>
       <div class="budget-row"><div class="br-item">อาหาร ~100¥/วัน × 6</div><div class="br-cny">~600¥</div><div class="br-thb">~3,000฿</div></div>
 
       <p class="section-header">🚌 เดินทางภายใน</p>
@@ -1550,7 +968,7 @@
         <div class="br-thb">~30,050฿</div>
       </div>
 
-      <p class="text-sm text-center mt-8">* อัตราแลกเปลี่ยนประมาณ 1 CNY ≈ 5 THB · ราคาอาจเปลี่ยนแปลงตามฤดูกาล</p>
+      <p class="text-sm text-center mt-8">* 1 CNY ≈ 5 THB · ราคาอาจเปลี่ยนแปลงตามฤดูกาล</p>
     </div>
   </div>
 </div>
@@ -1558,29 +976,19 @@
 <!-- BOTTOM NAV -->
 <nav class="bottom-nav">
   <button id="nav-itin" class="active" onclick="showPage('itin')">
-    <span class="bn-icon">🗓️</span>
-    <span>แผนการ</span>
-    <span class="bn-dot"></span>
+    <span class="bn-icon">🗓️</span><span>แผนการ</span><span class="bn-dot"></span>
   </button>
   <button id="nav-check" onclick="showPage('check')">
-    <span class="bn-icon">✅</span>
-    <span>เช็คลิสต์</span>
-    <span class="bn-dot"></span>
+    <span class="bn-icon">✅</span><span>เช็คลิสต์</span><span class="bn-dot"></span>
   </button>
   <button id="nav-alt" onclick="showPage('alt')">
-    <span class="bn-icon">⛰️</span>
-    <span>ความสูง</span>
-    <span class="bn-dot"></span>
+    <span class="bn-icon">⛰️</span><span>ความสูง</span><span class="bn-dot"></span>
   </button>
   <button id="nav-cn" onclick="showPage('cn')">
-    <span class="bn-icon">🈶</span>
-    <span>ภาษาจีน</span>
-    <span class="bn-dot"></span>
+    <span class="bn-icon">🈶</span><span>ภาษาจีน</span><span class="bn-dot"></span>
   </button>
   <button id="nav-budget" onclick="showPage('budget')">
-    <span class="bn-icon">💰</span>
-    <span>งบประมาณ</span>
-    <span class="bn-dot"></span>
+    <span class="bn-icon">💰</span><span>งบประมาณ</span><span class="bn-dot"></span>
   </button>
 </nav>
 
@@ -1604,12 +1012,12 @@ function updateProgress() {
   const total = items.length;
   let done = 0;
   items.forEach(el => { if (el.classList.contains('checked')) done++; });
-  const pct = total ? Math.round(done/total*100) : 0;
+  const pct = total ? Math.round(done / total * 100) : 0;
   document.getElementById('progressPill').textContent = done + ' / ' + total;
-  const progText = document.getElementById('progText');
-  const progBar = document.getElementById('progBar');
-  if (progText) progText.textContent = done + ' / ' + total;
-  if (progBar) progBar.style.width = pct + '%';
+  const pt = document.getElementById('progText');
+  const pb = document.getElementById('progBar');
+  if (pt) pt.textContent = done + ' / ' + total;
+  if (pb) pb.style.width = pct + '%';
 }
 
 function toggleCheck(el) {
@@ -1620,9 +1028,7 @@ function toggleCheck(el) {
   updateProgress();
 }
 
-function toggleGear(el) {
-  el.classList.toggle('checked');
-}
+function toggleGear(el) { el.classList.toggle('checked'); }
 
 function showDay(n) {
   document.querySelectorAll('.day-page').forEach((el, i) => el.classList.toggle('active', i === n));
@@ -1634,11 +1040,10 @@ function showPage(page) {
   document.querySelectorAll('.bottom-nav button').forEach(el => el.classList.remove('active'));
   document.getElementById('page-' + page).classList.add('active');
   document.getElementById('nav-' + page).classList.add('active');
-  const dayTabs = document.querySelector('.day-tabs');
-  if (dayTabs) dayTabs.style.display = page === 'itin' ? 'flex' : 'none';
+  const dt = document.querySelector('.day-tabs');
+  if (dt) dt.style.display = page === 'itin' ? 'flex' : 'none';
 }
 
-// Init
 loadState();
 document.querySelectorAll('.checklist-item[data-id]').forEach(el => {
   if (checked[el.dataset.id]) el.classList.add('checked');
