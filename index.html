@@ -44,108 +44,177 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* ─── HEADER ─── */
-  .header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: #ffffff;
-    border-bottom: 1px solid var(--border);
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  /* ─── TRIP HERO ─── */
+  .trip-hero {
+    background: linear-gradient(160deg, #0f172a 0%, #1e3a5f 40%, #312e81 75%, #4c1d95 100%);
+    padding: 28px 20px 0;
+    position: relative;
+    overflow: hidden;
   }
 
-  .header-banner {
-    background: linear-gradient(135deg, #0ea5e9 0%, #6366f1 50%, #f97316 100%);
-    padding: 14px 16px 12px;
+  .trip-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(ellipse at 75% 15%, rgba(99,102,241,0.35) 0%, transparent 55%),
+      radial-gradient(ellipse at 15% 85%, rgba(14,165,233,0.25) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .hero-inner { position: relative; z-index: 2; }
+
+  .hero-eyebrow {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .hero-title {
+    font-size: 30px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 3px;
+  }
+
+  .hero-route {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    color: rgba(255,255,255,0.45);
+    margin-bottom: 18px;
+    letter-spacing: 0.06em;
+  }
+
+  .hero-countdown-row {
     display: flex;
-    align-items: center;
-    gap: 12px;
+    align-items: baseline;
+    gap: 6px;
+    margin-bottom: 14px;
   }
 
-  .banner-icon {
-    font-size: 28px;
+  .countdown-num {
+    font-family: 'Space Mono', monospace;
+    font-size: 56px;
+    font-weight: 700;
+    color: #fff;
     line-height: 1;
   }
 
-  .banner-text { flex: 1; }
+  .countdown-unit {
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    font-weight: 400;
+  }
 
-  .banner-text h1 {
-    font-size: 16px;
+  .countdown-plane { font-size: 22px; margin-left: 2px; }
+
+  .hero-chips {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+    margin-bottom: 22px;
+  }
+
+  .hero-chip {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.18);
+    color: rgba(255,255,255,0.8);
+    font-size: 11px;
+    padding: 4px 11px;
+    border-radius: 20px;
+    font-family: 'Space Mono', monospace;
+  }
+
+  .hero-mountain {
+    position: relative;
+    height: 68px;
+    margin: 0 -20px;
+  }
+
+  .hero-mountain svg { width: 100%; height: 100%; display: block; }
+
+  /* ─── STICKY TAB BAR ─── */
+  .tab-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    padding: 8px 10px 8px 12px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    gap: 6px;
+  }
+  .tab-bar::-webkit-scrollbar { display: none; }
+
+  .day-pill {
+    flex-shrink: 0;
+    border: none;
+    background: var(--bg);
+    border-radius: 12px;
+    padding: 6px 13px;
+    cursor: pointer;
+    font-family: 'Kanit', sans-serif;
+    transition: all 0.2s;
+    -webkit-tap-highlight-color: transparent;
+    text-align: center;
+  }
+
+  .day-pill.active {
+    background: var(--primary);
+    box-shadow: 0 2px 10px rgba(14,165,233,0.35);
+  }
+
+  .day-pill .pill-num {
+    display: block;
+    font-family: 'Space Mono', monospace;
+    font-size: 13px;
     font-weight: 700;
-    color: #fff;
-    line-height: 1.2;
+    color: var(--text3);
+    line-height: 1;
   }
 
-  .banner-text p {
-    font-size: 11px;
-    color: rgba(255,255,255,0.82);
-    font-family: 'Space Mono', monospace;
+  .day-pill .pill-label {
+    display: block;
+    font-size: 9px;
+    color: var(--text3);
     margin-top: 2px;
+    white-space: nowrap;
   }
 
-  .progress-pill {
-    background: rgba(255,255,255,0.22);
-    border: 1px solid rgba(255,255,255,0.5);
-    color: #fff;
-    font-size: 11px;
+  .day-pill.active .pill-num,
+  .day-pill.active .pill-label { color: #fff; }
+
+  .day-pill.danger .pill-num { color: var(--orange); }
+  .day-pill.active.danger {
+    background: var(--orange);
+    box-shadow: 0 2px 10px rgba(249,115,22,0.35);
+  }
+  .day-pill.active.danger .pill-num,
+  .day-pill.active.danger .pill-label { color: #fff; }
+
+  .tab-bar-progress {
+    flex-shrink: 0;
+    margin-left: auto;
+    background: var(--primary-light);
+    border: 1px solid #bae6fd;
+    color: var(--primary-dark);
+    font-size: 10px;
     font-family: 'Space Mono', monospace;
-    padding: 4px 12px;
+    padding: 5px 10px;
     border-radius: 20px;
     white-space: nowrap;
     font-weight: 700;
   }
-
-  /* ─── DAY TABS ─── */
-  .day-tabs {
-    display: flex;
-    gap: 0;
-    overflow-x: auto;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-    padding: 0 8px;
-    background: #fff;
-  }
-  .day-tabs::-webkit-scrollbar { display: none; }
-
-  .day-tab {
-    flex-shrink: 0;
-    padding: 10px 16px 12px;
-    border: none;
-    background: transparent;
-    color: var(--text3);
-    font-family: 'Kanit', sans-serif;
-    font-size: 12px;
-    font-weight: 400;
-    cursor: pointer;
-    border-bottom: 3px solid transparent;
-    transition: all 0.2s;
-    white-space: nowrap;
-  }
-
-  .day-tab.active {
-    color: var(--primary-dark);
-    border-bottom-color: var(--primary);
-    font-weight: 600;
-  }
-
-  .day-tab .day-num {
-    display: block;
-    font-size: 18px;
-    font-weight: 800;
-    line-height: 1;
-    margin-bottom: 2px;
-    font-family: 'Space Mono', monospace;
-  }
-
-  .day-tab .day-label {
-    display: block;
-    font-size: 10px;
-  }
-
-  .day-tab.danger .day-num { color: var(--orange); }
-  .day-tab.active.danger { border-bottom-color: var(--orange); color: var(--orange); }
-  .day-tab.active .day-num { color: var(--primary); }
-  .day-tab.active.danger .day-num { color: var(--orange); }
 
   /* ─── CONTENT ─── */
   .content {
@@ -816,42 +885,60 @@
 </head>
 <body>
 
-<!-- HEADER -->
-<div class="header">
-  <div class="header-banner">
-    <div class="banner-icon">🏔️</div>
-    <div class="banner-text">
-      <h1>Yunnan Trip 2026</h1>
-      <p>24–29 JUL · BKK → KMG → DIG → LJG</p>
+<!-- TRIP HERO -->
+<div class="trip-hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">✦ Trip Planner</div>
+    <div class="hero-title">Yunnan 2026 🏔️</div>
+    <div class="hero-route">BKK → KMG → SHANGRI-LA → LIJIANG</div>
+    <div class="hero-countdown-row">
+      <span class="countdown-num" id="daysLeft">--</span>
+      <span class="countdown-unit">days to go</span>
+      <span class="countdown-plane">✈️</span>
     </div>
-    <div class="progress-pill" id="progressPill">0 / 0</div>
+    <div class="hero-chips">
+      <span class="hero-chip">📅 24–29 Jul</span>
+      <span class="hero-chip">🥾 4,220 m Peak</span>
+      <span class="hero-chip">🚄 3 Trains</span>
+      <span class="hero-chip">6 Days</span>
+    </div>
   </div>
-  <div class="day-tabs" id="dayTabs">
-    <button class="day-tab active" onclick="showDay(0)">
-      <span class="day-num">D0</span>
-      <span class="day-label">24 Jul 🌙</span>
-    </button>
-    <button class="day-tab" onclick="showDay(1)">
-      <span class="day-num">D1</span>
-      <span class="day-label">25 Jul 🚄</span>
-    </button>
-    <button class="day-tab danger" onclick="showDay(2)">
-      <span class="day-num">D2</span>
-      <span class="day-label">26 Jul 🥾</span>
-    </button>
-    <button class="day-tab" onclick="showDay(3)">
-      <span class="day-num">D3</span>
-      <span class="day-label">27 Jul 🏯</span>
-    </button>
-    <button class="day-tab danger" onclick="showDay(4)">
-      <span class="day-num">D4</span>
-      <span class="day-label">28 Jul 🏔️</span>
-    </button>
-    <button class="day-tab" onclick="showDay(5)">
-      <span class="day-num">D5</span>
-      <span class="day-label">29 Jul ✈️</span>
-    </button>
+  <div class="hero-mountain">
+    <svg viewBox="0 0 400 68" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 68 L0 48 L30 38 L60 50 L90 30 L120 44 L150 18 L180 38 L210 8 L240 32 L270 14 L300 36 L330 22 L360 40 L400 28 L400 68 Z" fill="rgba(255,255,255,0.06)"/>
+      <path d="M0 68 L0 55 L40 44 L80 56 L120 36 L160 50 L200 28 L240 46 L280 34 L320 50 L360 42 L400 52 L400 68 Z" fill="rgba(255,255,255,0.1)"/>
+      <path d="M0 68 L400 68 L400 58 L360 50 L320 60 L280 52 L240 62 L200 54 L160 64 L120 56 L80 65 L40 58 L0 63 Z" fill="#ffffff"/>
+    </svg>
   </div>
+</div>
+
+<!-- STICKY TAB BAR -->
+<div class="tab-bar" id="dayTabs">
+  <button class="day-pill active" onclick="showDay(0)">
+    <span class="pill-num">D0</span>
+    <span class="pill-label">24 Jul 🌙</span>
+  </button>
+  <button class="day-pill" onclick="showDay(1)">
+    <span class="pill-num">D1</span>
+    <span class="pill-label">25 Jul 🚄</span>
+  </button>
+  <button class="day-pill danger" onclick="showDay(2)">
+    <span class="pill-num">D2</span>
+    <span class="pill-label">26 Jul 🥾</span>
+  </button>
+  <button class="day-pill" onclick="showDay(3)">
+    <span class="pill-num">D3</span>
+    <span class="pill-label">27 Jul 🏯</span>
+  </button>
+  <button class="day-pill danger" onclick="showDay(4)">
+    <span class="pill-num">D4</span>
+    <span class="pill-label">28 Jul 🏔️</span>
+  </button>
+  <button class="day-pill" onclick="showDay(5)">
+    <span class="pill-num">D5</span>
+    <span class="pill-label">29 Jul ✈️</span>
+  </button>
+  <div class="tab-bar-progress" id="progressPill">0 / 0</div>
 </div>
 
 <!-- ITINERARY PAGE -->
@@ -1550,7 +1637,7 @@
 
   function showDay(n) {
     document.querySelectorAll('.day-page').forEach((el, i) => el.classList.toggle('active', i === n));
-    document.querySelectorAll('.day-tab').forEach((el, i) => el.classList.toggle('active', i === n));
+    document.querySelectorAll('.day-pill').forEach((el, i) => el.classList.toggle('active', i === n));
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
@@ -1559,8 +1646,19 @@
     document.querySelectorAll('.bottom-nav button').forEach(el => el.classList.remove('active'));
     document.getElementById('page-' + page).classList.add('active');
     document.getElementById('nav-' + page).classList.add('active');
-    document.querySelector('.day-tabs').style.display = page === 'itin' ? 'flex' : 'none';
+    document.getElementById('dayTabs').style.display = page === 'itin' ? 'flex' : 'none';
   }
+
+  function updateCountdown() {
+    const depart = new Date('2026-07-24T00:00:00+07:00');
+    const now = new Date();
+    const diff = Math.ceil((depart - now) / 86400000);
+    const el = document.getElementById('daysLeft');
+    if (diff > 0) el.textContent = diff;
+    else if (diff === 0) el.textContent = 'Today!';
+    else el.textContent = 'Ongoing';
+  }
+  updateCountdown();
 
   function toggleCheck(el) {
     const id = el.dataset.id;
