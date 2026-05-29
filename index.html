@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>🏔️ Yunnan Trip · 24-29 Jul 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <style>
   :root {
     --bg: #f0f4f8;
@@ -882,95 +881,6 @@
     text-transform: uppercase;
     letter-spacing: 0.06em;
   }
-
-  /* ─── MAP BUTTON ─── */
-  .map-btn {
-    display: inline-flex;
-    align-items: center;
-    background: none;
-    border: none;
-    padding: 0 3px;
-    cursor: pointer;
-    font-size: 14px;
-    vertical-align: middle;
-    opacity: 0.65;
-    transition: opacity 0.15s, transform 0.15s;
-    -webkit-tap-highlight-color: transparent;
-    line-height: 1;
-  }
-  .map-btn:active { transform: scale(0.85); opacity: 1; }
-
-  /* ─── MAP MODAL ─── */
-  .map-overlay {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 400;
-  }
-  .map-overlay.active { display: block; }
-  .map-backdrop {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.5);
-  }
-  .map-sheet {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #fff;
-    border-radius: 20px 20px 0 0;
-    overflow: hidden;
-    max-width: 600px;
-    margin: 0 auto;
-    animation: slideUp 0.25s ease;
-  }
-  @keyframes slideUp {
-    from { transform: translateY(100%); }
-    to { transform: translateY(0); }
-  }
-  .map-sheet-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 16px 12px;
-    border-bottom: 1px solid var(--border);
-  }
-  .map-sheet-title {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--text);
-    flex: 1;
-  }
-  .map-sheet-close {
-    background: var(--bg);
-    border: none;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text2);
-    flex-shrink: 0;
-  }
-  #leafletMap { height: 280px; }
-  .map-ext-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    padding: 11px;
-    font-size: 12px;
-    color: var(--primary-dark);
-    font-family: 'Space Mono', monospace;
-    border-top: 1px solid var(--border);
-    text-decoration: none;
-    background: var(--primary-light);
-    font-weight: 700;
-  }
 </style>
 </head>
 <body>
@@ -1081,7 +991,7 @@
         <div class="timeline-item">
           <div class="timeline-time">01:30</div>
           <div class="timeline-dot success"></div>
-          <div class="timeline-body success"><p>🛏️ ไป B3 Overnight Rest Area <button class="map-btn" onclick="showMap(24.9923,102.7433,'KMG Airport · B3 Rest Area')">📍</button><br><span style="font-size:11px;color:#64748b">หรือ B1 Transit Rest Area (สำรอง)</span></p></div>
+          <div class="timeline-body success"><p>🛏️ ไป B3 Overnight Rest Area<br><span style="font-size:11px;color:#64748b">หรือ B1 Transit Rest Area (สำรอง)</span></p></div>
         </div>
         <div class="timeline-item">
           <div class="timeline-time">01:45–05:30</div>
@@ -1096,7 +1006,7 @@
         <div class="timeline-item">
           <div class="timeline-time">06:00</div>
           <div class="timeline-dot danger"></div>
-          <div class="timeline-body danger"><p>🚕 Didi/Taxi ออกจากสนามบิน → Kunming Railway Station <button class="map-btn" onclick="showMap(25.0280,102.6830,'Kunming Railway Station 昆明站')">📍</button><br><span class="tl-note">~50 นาที · ~120 CNY · ออกจาก B3 Area H</span></p></div>
+          <div class="timeline-body danger"><p>🚕 Didi/Taxi ออกจากสนามบิน → Kunming Railway Station<br><span class="tl-note">~50 นาที · ~120 CNY · ออกจาก B3 Area H</span></p></div>
         </div>
       </div>
 
@@ -1170,7 +1080,7 @@
       <div class="transport-card">
         <div class="transport-icon">🚕</div>
         <div class="transport-info">
-          <div class="t-route">KMG Airport → Kunming Station (昆明站) <button class="map-btn" onclick="showMap(25.0280,102.6830,'Kunming Railway Station 昆明站')">📍</button></div>
+          <div class="t-route">KMG Airport → Kunming Station (昆明站)</div>
           <div class="t-detail">Didi/Taxi · B3 Area H · ~50 นาที<br>⚠️ ไม่ใช่ Kunming South!</div>
         </div>
         <div class="transport-badge">~120¥</div>
@@ -1193,11 +1103,11 @@
         <div class="timeline-item"><div class="timeline-time">06:50–07:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>Security screening → หาชานชาลา</p></div></div>
         <div class="timeline-item"><div class="timeline-time">07:56</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🚄 รถไฟ C118 ออกจาก Kunming<br><span class="tl-note">วิวภูเขาสวยมาก — นอนต่อได้เลยถ้าง่วง</span></p></div></div>
         <div class="timeline-item"><div class="timeline-time">12:44</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🏔️ ถึง Shangri-La Railway Station</p></div></div>
-        <div class="timeline-item"><div class="timeline-time">12:50</div><div class="timeline-dot"></div><div class="timeline-body"><p>🚕 Didi → Dukezong Old Town <button class="map-btn" onclick="showMap(27.8269,99.7060,'Dukezong Old Town 独克宗古城')">📍</button> (~15 นาที, 30¥)</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">12:50</div><div class="timeline-dot"></div><div class="timeline-body"><p>🚕 Didi → Dukezong Old Town (~15 นาที, 30¥)</p></div></div>
         <div class="timeline-item"><div class="timeline-time">13:15</div><div class="timeline-dot"></div><div class="timeline-body"><p>🍜 กินข้าวเบาๆ (ห้ามกินหนัก!)</p></div></div>
-        <div class="timeline-item"><div class="timeline-time">14:30</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>🏨 Check-in: Shangri-La Anyu Garden Boutique Guesthouse <button class="map-btn" onclick="showMap(27.8269,99.7060,'Anyu Garden Boutique Guesthouse')">📍</button><br><span class="tl-note">Dukezong Ancient Town · Leboduolang, No. 65, Jinlong Street, Jiantang Town</span></p></div></div>
+        <div class="timeline-item"><div class="timeline-time">14:30</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>🏨 Check-in: Shangri-La Anyu Garden Boutique Guesthouse<br><span class="tl-note">Dukezong Ancient Town · Leboduolang, No. 65, Jinlong Street, Jiantang Town</span></p></div></div>
         <div class="timeline-item"><div class="timeline-time">15:00–16:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>💤 นอนพัก ดื่มน้ำเยอะๆ ร่างกายปรับ altitude</p></div></div>
-        <div class="timeline-item"><div class="timeline-time">16:00–18:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🚶 เดินเบาๆ Dukezong Old Town + Giant Prayer Wheel <button class="map-btn" onclick="showMap(27.8244,99.7051,'Giant Prayer Wheel · Guishan Park')">📍</button><br><span class="tl-note">อย่าเดินเยอะ อย่าขึ้นบันไดเร็ว!</span></p></div></div>
+        <div class="timeline-item"><div class="timeline-time">16:00–18:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🚶 เดินเบาๆ Dukezong Old Town + Giant Prayer Wheel<br><span class="tl-note">อย่าเดินเยอะ อย่าขึ้นบันไดเร็ว!</span></p></div></div>
         <div class="timeline-item"><div class="timeline-time">18:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>🍽️ อาหารเย็นเบาๆ</p></div></div>
         <div class="timeline-item"><div class="timeline-time">20:30</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>💊 กิน Rhodiola + ดื่มน้ำ 1L → เข้านอน</p></div></div>
       </div>
@@ -1266,9 +1176,9 @@
         <div class="timeline-item"><div class="timeline-time">06:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>🍳 กินข้าวเบาๆ — โจ๊ก + ไข่ต้ม</p></div></div>
         <div class="timeline-item"><div class="timeline-time">07:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>📦 เช็ค gear ทั้งหมด (ดูลิสต์ด้านล่าง)</p></div></div>
         <div class="timeline-item"><div class="timeline-time">07:30</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🚶 เดินไปขึ้นรถทัวร์ที่ <strong>ประตูทิศตะวันออก (East Gate)</strong><br><span class="tl-note">Abujicuo Trail · เผื่อเวลาเดินจาก Anyu Guesthouse ~10-15 นาที</span></p></div></div>
-        <div class="timeline-item"><div class="timeline-time">07:30–09:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🚐 ขับรถ 1.5 ชม. → Niguge trailhead (3,600 ม.) <button class="map-btn" onclick="showMap(27.9500,99.7350,'Abujicuo Trailhead · Niguge')">📍</button></p></div></div>
+        <div class="timeline-item"><div class="timeline-time">07:30–09:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🚐 ขับรถ 1.5 ชม. → Niguge trailhead (3,600 ม.)</p></div></div>
         <div class="timeline-item"><div class="timeline-time">09:00</div><div class="timeline-dot warn"></div><div class="timeline-body warn"><p>🥾 เริ่มเดินขึ้น — Rule: "30 ก้าว → หยุดหายใจ 30 วิ"</p></div></div>
-        <div class="timeline-item"><div class="timeline-time">11:30–12:00</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🌊 ถึง Abujicuo Lake (4,220 ม.)! 🎉 <button class="map-btn" onclick="showMap(27.9898,99.7554,'Abujicuo Lake 属都湖')">📍</button><br><span class="tl-note">ถ่ายรูป กินข้าว พักสั้นๆ อย่าอยู่นานเกินไป</span></p></div></div>
+        <div class="timeline-item"><div class="timeline-time">11:30–12:00</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🌊 ถึง Abujicuo Lake (4,220 ม.)! 🎉<br><span class="tl-note">ถ่ายรูป กินข้าว พักสั้นๆ อย่าอยู่นานเกินไป</span></p></div></div>
         <div class="timeline-item"><div class="timeline-time">13:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>⬇️ เริ่มเดินลง (เร็วกว่าขึ้น ~1.5 ชม.)</p></div></div>
         <div class="timeline-item"><div class="timeline-time">15:00–16:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>🚐 ขับกลับ Shangri-La</p></div></div>
         <div class="timeline-item"><div class="timeline-time">17:00</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>🏨 ถึงโรงแรม อาบน้ำอุ่น นอนพัก</p></div></div>
@@ -1299,9 +1209,9 @@
         <div class="alert-icon">💡</div>
         <div class="alert-body">
           <div class="alert-title">ทางเลือกในกรณียกเลิก Abujicuo</div>
-          🏛️ <strong>Songzanlin Monastery</strong> <button class="map-btn" onclick="showMap(27.8649,99.7148,'Songzanlin Monastery 松赞林寺')">📍</button> — วัดทิเบตใหญ่ที่สุด, เดินง่าย · 115¥<br>
-          🚲 <strong>Napa Lake</strong> <button class="map-btn" onclick="showMap(27.8530,99.6410,'Napa Lake 纳帕海')">📍</button> — ปั่นจักรยานชิลล์ๆ, ราบมาก · 60¥<br>
-          🌲 <strong>Pudacuo National Park</strong> <button class="map-btn" onclick="showMap(27.6821,99.8513,'Pudacuo National Park 普达措')">📍</button> — boardwalk สบาย · 100¥
+          🏛️ <strong>Songzanlin Monastery</strong> — วัดทิเบตใหญ่ที่สุด, เดินง่าย · 115¥<br>
+          🚲 <strong>Napa Lake</strong> — ปั่นจักรยานชิลล์ๆ, ราบมาก · 60¥<br>
+          🌲 <strong>Pudacuo National Park</strong> — boardwalk สบาย · 100¥
         </div>
       </div>
     </div>
@@ -1343,19 +1253,19 @@
         <div class="timeline-item"><div class="timeline-time">09:00–09:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>🚶 เดินเล่น Dukezong เช้า (เงียบ + สวยมากตอนเช้า)<br><span class="tl-note">ซื้อของฝาก butter coffee / thangka</span></p></div></div>
         <div class="timeline-item"><div class="timeline-time">09:45</div><div class="timeline-dot warn"></div><div class="timeline-body warn"><p>🚕 รับกระเป๋า → Didi ไปสถานีรถไฟ</p></div></div>
         <div class="timeline-item"><div class="timeline-time">10:30</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🚄 รถไฟ C120 ออก → Lijiang</p></div></div>
-        <div class="timeline-item"><div class="timeline-time">11:50</div><div class="timeline-dot"></div><div class="timeline-body"><p>🛬 ถึง Lijiang Railway Station <button class="map-btn" onclick="showMap(26.8234,100.2436,'Lijiang Railway Station 丽江站')">📍</button></p></div></div>
-        <div class="timeline-item"><div class="timeline-time">12:30</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>🏨 Check-in: Feng Qingcheng Inn (Dashi Che Hotel) <button class="map-btn" onclick="showMap(26.8765,100.2269,'Lijiang Old Town · Sifang Area')">📍</button></p></div></div>
+        <div class="timeline-item"><div class="timeline-time">11:50</div><div class="timeline-dot"></div><div class="timeline-body"><p>🛬 ถึง Lijiang Railway Station</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">12:30</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>🏨 Check-in: Feng Qingcheng Inn (Dashi Che Hotel)</p></div></div>
         <div class="timeline-item"><div class="timeline-time">13:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>🍜 อาหารกลางวัน Naxi</p></div></div>
-        <div class="timeline-item"><div class="timeline-time">15:00–18:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🏯 เดิน Lijiang Old Town <button class="map-btn" onclick="showMap(26.8765,100.2269,'Lijiang Old Town 丽江古城')">📍</button> · Sifang St · Mu Mansion <button class="map-btn" onclick="showMap(26.8694,100.2290,'Mu Mansion 木府')">📍</button> · Wangu Tower <button class="map-btn" onclick="showMap(26.8851,100.2264,'Wangu Tower 万古楼')">📍</button></p></div></div>
+        <div class="timeline-item"><div class="timeline-time">15:00–18:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🏯 เดิน Lijiang Old Town · Sifang St · Mu Mansion · Wangu Tower</p></div></div>
         <div class="timeline-item"><div class="timeline-time">20:00–22:00</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🏮 Old Town ยามค่ำคืน — สวยที่สุดของทริป!</p></div></div>
       </div>
 
       <p class="section-header">🏯 จุดน่าไปใน Lijiang</p>
       <div class="info-grid">
-        <div class="info-card" onclick="showMap(26.8765,100.2269,'Sifang Square 四方街')" style="cursor:pointer"><div class="ic-label">四方街 📍</div><div class="ic-value">Sifang Square</div><div class="ic-sub">ใจกลางเมืองเก่า · ฟรี</div></div>
-        <div class="info-card" onclick="showMap(26.8694,100.2290,'Mu Mansion 木府')" style="cursor:pointer"><div class="ic-label">木府 📍</div><div class="ic-value">Mu Mansion</div><div class="ic-sub">วังเจ้าเมือง Naxi · 60¥</div></div>
-        <div class="info-card" onclick="showMap(26.8851,100.2264,'Wangu Tower 万古楼')" style="cursor:pointer"><div class="ic-label">万古楼 📍</div><div class="ic-value">Wangu Tower</div><div class="ic-sub">วิวทั้งเมืองเก่า · 50¥</div></div>
-        <div class="info-card" onclick="showMap(26.8936,100.2302,'Black Dragon Pool 黑龙潭')" style="cursor:pointer"><div class="ic-label">黑龙潭 📍</div><div class="ic-value">Black Dragon Pool</div><div class="ic-sub">วิว Jade Dragon Mt · ฟรี</div></div>
+        <div class="info-card"><div class="ic-label">四方街</div><div class="ic-value">Sifang Square</div><div class="ic-sub">ใจกลางเมืองเก่า · ฟรี</div></div>
+        <div class="info-card"><div class="ic-label">木府</div><div class="ic-value">Mu Mansion</div><div class="ic-sub">วังเจ้าเมือง Naxi · 60¥</div></div>
+        <div class="info-card"><div class="ic-label">万古楼</div><div class="ic-value">Wangu Tower</div><div class="ic-sub">วิวทั้งเมืองเก่า · 50¥</div></div>
+        <div class="info-card"><div class="ic-label">黑龙潭</div><div class="ic-value">Black Dragon Pool</div><div class="ic-sub">วิว Jade Dragon Mt · ฟรี</div></div>
       </div>
 
       <div class="alert alert-yellow">
@@ -1444,10 +1354,10 @@
       <div class="timeline">
         <div class="timeline-item"><div class="timeline-time">06:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>📱 เช็คสภาพอากาศ → ตัดสินใจ cable car</p></div></div>
         <div class="timeline-item"><div class="timeline-time">07:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🍳 กินข้าวเช้า</p></div></div>
-        <div class="timeline-item"><div class="timeline-time">08:00</div><div class="timeline-dot warn"></div><div class="timeline-body warn"><p>🚕 Didi/Charter → Jade Dragon Snow Mountain <button class="map-btn" onclick="showMap(27.1079,100.1939,'Jade Dragon Snow Mountain 玉龙雪山')">📍</button> (~50 นาที, ~120¥)</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">08:00</div><div class="timeline-dot warn"></div><div class="timeline-body warn"><p>🚕 Didi/Charter → Jade Dragon (~50 นาที, ~120¥)</p></div></div>
         <div class="timeline-item"><div class="timeline-time">09:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🎫 ซื้อตั๋ว + Preservation Fee 50¥ · รถ shuttle ไป cable car</p></div></div>
         <div class="timeline-item"><div class="timeline-time">09:30–13:00</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🚡 ขึ้น cable car · เดินชมทิวทัศน์<br><span class="tl-note">เดินช้าๆ ที่สูงนี้ อย่าวิ่งเด็ดขาด</span></p></div></div>
-        <div class="timeline-item"><div class="timeline-time">14:00–16:00</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>💧 Blue Moon Valley (蓝月谷) <button class="map-btn" onclick="showMap(27.0904,100.1817,'Blue Moon Valley 蓝月谷')">📍</button> — น้ำสีฟ้าเขียวสวยมาก<br><span class="tl-note">shuttle ภายใน ~60¥</span></p></div></div>
+        <div class="timeline-item"><div class="timeline-time">14:00–16:00</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>💧 Blue Moon Valley (蓝月谷) — น้ำสีฟ้าเขียวสวยมาก<br><span class="tl-note">shuttle ภายใน ~60¥</span></p></div></div>
         <div class="timeline-item"><div class="timeline-time">16:00–17:00</div><div class="timeline-dot"></div><div class="timeline-body"><p>🎭 Optional: Impression Lijiang Show (印象丽江) — 250¥</p></div></div>
         <div class="timeline-item"><div class="timeline-time">17:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>🚕 กลับ Lijiang Old Town</p></div></div>
         <div class="timeline-item"><div class="timeline-time">22:00</div><div class="timeline-dot danger"></div><div class="timeline-body danger"><p>📦 Pack กระเป๋าทุกอย่าง — พรุ่งนี้ตื่น 05:30!</p></div></div>
@@ -1500,7 +1410,7 @@
         <div class="timeline-item"><div class="timeline-time">06:30</div><div class="timeline-dot warn"></div><div class="timeline-body warn"><p>🚕 Didi → Lijiang Railway Station</p></div></div>
         <div class="timeline-item"><div class="timeline-time">07:31</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🚄 รถไฟ D8748 ออกจาก Lijiang</p></div></div>
         <div class="timeline-item"><div class="timeline-time">10:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>🛬 ถึง Kunming Railway Station</p></div></div>
-        <div class="timeline-item"><div class="timeline-time">11:15–12:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>🌿 เดินเล่น Green Lake Park <button class="map-btn" onclick="showMap(25.0574,102.7073,'Green Lake Park 翠湖公园')">📍</button> + Yuantong Temple <button class="map-btn" onclick="showMap(25.0544,102.7195,'Yuantong Temple 圆通寺')">📍</button> (ฟรีเข้า)</p></div></div>
+        <div class="timeline-item"><div class="timeline-time">11:15–12:30</div><div class="timeline-dot"></div><div class="timeline-body"><p>🌿 เดินเล่น Green Lake Park + Yuantong Temple (ฟรีเข้า)</p></div></div>
         <div class="timeline-item"><div class="timeline-time">12:30</div><div class="timeline-dot highlight"></div><div class="timeline-body highlight"><p>🍜 ข้าวเที่ยง: Jianxin Yuan (建新园)<br><span class="tl-note">过桥米线 Crossing-the-Bridge Noodles ¥30–60</span></p></div></div>
         <div class="timeline-item"><div class="timeline-time">14:50</div><div class="timeline-dot"></div><div class="timeline-body"><p>🛫 ถึง KMG · Check-in MU9613</p></div></div>
         <div class="timeline-item"><div class="timeline-time">18:00</div><div class="timeline-dot success"></div><div class="timeline-body success"><p>✈️ MU9613 ออก → BKK</p></div></div>
@@ -1694,19 +1604,6 @@
   </div>
 </div>
 
-<!-- MAP MODAL -->
-<div class="map-overlay" id="mapOverlay">
-  <div class="map-backdrop" onclick="closeMap()"></div>
-  <div class="map-sheet">
-    <div class="map-sheet-header">
-      <span class="map-sheet-title" id="mapTitle">Location</span>
-      <button class="map-sheet-close" onclick="closeMap()">✕</button>
-    </div>
-    <div id="leafletMap"></div>
-    <a class="map-ext-link" id="mapExtLink" href="#" target="_blank" rel="noopener">🗺️ Open in OpenStreetMap →</a>
-  </div>
-</div>
-
 <!-- BOTTOM NAV -->
 <div class="bottom-nav">
   <button class="active" onclick="showPage('itin')" id="nav-itin">
@@ -1726,7 +1623,6 @@
   </button>
 </div>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
   const STORAGE_KEY = 'yunnan_trip_checks';
   let checked = {};
@@ -1793,34 +1689,6 @@
   loadState();
   restoreChecks();
   updateProgress();
-
-  // ─── MAP ───
-  let _map = null, _marker = null;
-
-  function showMap(lat, lng, name) {
-    document.getElementById('mapTitle').textContent = name;
-    document.getElementById('mapExtLink').href =
-      `https://www.openstreetmap.org/?mlat=${lat}&mlon=${lng}&zoom=15&layers=M`;
-    document.getElementById('mapOverlay').classList.add('active');
-    document.body.style.overflow = 'hidden';
-
-    if (!_map) {
-      _map = L.map('leafletMap', { zoomControl: true, attributionControl: false })
-               .setView([lat, lng], 15);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(_map);
-      L.control.attribution({ prefix: '© <a href="https://osm.org/copyright">OSM</a>' }).addTo(_map);
-    } else {
-      _map.setView([lat, lng], 15);
-      if (_marker) _map.removeLayer(_marker);
-    }
-    _marker = L.marker([lat, lng]).addTo(_map).bindPopup(name).openPopup();
-    setTimeout(() => _map.invalidateSize(), 120);
-  }
-
-  function closeMap() {
-    document.getElementById('mapOverlay').classList.remove('active');
-    document.body.style.overflow = '';
-  }
 </script>
 </body>
 </html>
